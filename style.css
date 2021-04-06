@@ -11,7 +11,7 @@
   padding: none;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: grid;
   transition-duration: 0.2s;
   cursor: pointer;
 }
@@ -142,6 +142,7 @@ li a {
 
 .desc {
   margin: 20px;
+  color: rgb(255, 255, 255);
 }
 
 .arrow {
@@ -156,4 +157,8 @@ li a {
 .arrow:hover{
     text-shadow: rgba(255,255,255,0.8) 0px 0px 21px; 
     color:white;
+}
+
+.section2{
+    border: none;
 }
