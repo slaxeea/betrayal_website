@@ -12,13 +12,14 @@
     <meta name="author" content="Michele Biondi & Simon Kappeler" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta lang="en" />
+
   </head>
 
   <body>
     <div class="grid-container">
-      <div class="head">
+      <div class="head" id="head">
         <ul class="nav-bar">
-            <li><a href="about.html"  class="btn-flip" data-back="about" data-front="about"></a></li>
+            <li><a href="about.html"  class="btn-flip" data-back="about" data-front="about" id="a"></a></li>
             <li><a href="collections.html"  class="btn-flip" data-back="collections" data-front="collections"></a></li>
             <li><a href="index.html"  class="btn-flip" data-back="home" data-front="home"></a></li>
           </ul>
@@ -29,19 +30,14 @@
           <img class="logo" src="imgs/logo_white.png" alt="logo"/>
           <br>
           <a href="#section2">
-          <button class="arrow" >&#11167;</button>
+          <button class="arrow" id="arrow" >&#11167;</button>
         </a>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
+        
         </div>
 
         <div class="section2" id="section2">
             <br>
-            <h2 class="desc" style="text-align:center">C O M I N G &nbsp;&nbsp; S O O N</h2>
+            <h2 class="desc" style="text-align:center">COMING SOON</h2>
         </div>
        
       </div>
@@ -79,6 +75,25 @@
         </div>
       </div>
     </div>
-    </div>
+
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        document.getElementById("head").style.display = 'none';
+        document.getElementById("arrow").style.display = 'none';
+}, false);
+    </script>
+    
+<script type="text/javascript">
+    var sc_project=12508568; 
+    var sc_invisible=1; 
+    var sc_security="2fe3f4e4"; 
+    </script>
+    <script type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics Made Easy -
+    StatCounter" href="https://statcounter.com/" target="_blank"><img
+    class="statcounter" src="https://c.statcounter.com/12508568/0/2fe3f4e4/1/"
+    alt="Web Analytics Made Easy - StatCounter"></a></div></noscript>
   </body>
 </html>
