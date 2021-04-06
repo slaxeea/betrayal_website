@@ -1,0 +1,149 @@
+.head {
+  grid-area: head;
+}
+.main {
+  grid-area: main;
+  height: 100%;
+}
+.foot {
+  grid-area: foot;
+  color: #dbdbdbbd;
+  padding: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "head head head head head head"
+    "main main main main main main"
+    "foot foot foot foot foot foot";
+  grid-gap: 1px;
+  padding: 1px;
+}
+
+.grid-container > div {
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-size: medium;
+}
+
+html {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.button {
+  border: 1px solid #dbdbdbbd;
+  background-color: rgba(0, 0, 0, 0);
+  color: #dbdbdbbd;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-decoration-color: #81818100;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  margin: auto;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+.button:hover {
+  color: white;
+  border: none;
+}
+.link {
+  color: #818181;
+  text-decoration: none;
+}
+.link:hover {
+  color: white;
+  transition-duration: 0.2s;
+}
+
+.inline {
+  display: inline;
+  font-size: 15px;
+}
+.nav-bar {
+  font-size: 20px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: #818181;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li :hover {
+  color: white;
+  transition-duration: 0.2s;
+  border: 1px solid white;
+  border-radius: 10%;
+}
+
+
+.logo {
+  max-width: 75%;
+}
+
+.left {
+    left: 0;
+  background-color: black;
+  color: white;
+}
+.right {
+    right:0;
+  background-color: white;
+  color: black;
+}
+
+.split {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  
+  float: left;
+}
+
+.shirt{
+    max-width: 45%;
+    margin: 50px;
+}
+
+.section{
+    position:relative;
+    display: block;
+    margin: 10%;
+}
+
+.desc{
+    margin: 20px;
+}
