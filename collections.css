@@ -11,14 +11,15 @@
 
 .tshirt-img-black{
     height: auto;
-    width: 50%;
+    width: 30%;
     display: block;
-    margin-left: auto;
+    margin-left: 60%;
 }
 .tshirt-img-white{
     height: auto;
-    width: 50%;
+    width: 30%;
     display: block;
+    margin-left: 10%;
 }
 
 .buy-btn-white{

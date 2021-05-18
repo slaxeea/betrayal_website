@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Betrayal by Michele</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="navbtn.css" />
+    <link rel="stylesheet" href="form.css" />
+    <meta charset="utf-8" />
+    <meta name="description" content="Betrayal by Michel Biondi" />
+    <meta name="keywords" content="Betrayal" />
+    <meta name="author" content="Michele Biondi & Simon Kappeler" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta lang="en" />
+</head>
+
+<body>
+    <div class="head">
+        <ul class="nav-bar">
+            <li>
+                <a href="about.html" class="btn-flip" data-back="about" data-front="about"></a>
+            </li>
+            <li>
+                <a href="collections.html" class="btn-flip" data-back="collections" data-front="collections"></a>
+            </li>
+            <li>
+                <a href="index.html" class="btn-flip" data-back="home" data-front="home"></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <form class="form" action="not_found.html">
+            <label for="vorname">Vorname: </label><br>
+            <input type="text" id="vorname" required> <br>
+
+            <label for="name">Name: </label><br>
+            <input type="text" id="name" required>
+
+
+            <label for="adresse">Adresse: </label>
+            <input type="text" id="adresse" required> <br>
+
+            <label for="nummer">Nummer: </label>
+            <input type="text" id="nummer" required><br><br>
+
+            <label for="anz">Anzahl: </label>
+            <input type="text" id="anz" required>
+
+            <label for="anz">Produkt: </label>
+            <select type="text" id="produkt"  required>
+                <option value="T-Shirt White">T-Shirt White</option>
+                <option value="T-Shirt Black">T-Shirt Black</option>
+            </select>
+        </form><br>
+<br><br>
+
+    </div>
+    
+    <br>
+    <br><br><button class="submit-btn" onclick="sendMsg()" >submit</button>
+    <br><br><br>
+
+    <div class="foot">
+        <!--footer stuff-->
+        <div class="item5">
+            <hr />
+            <a href="https://www.instagram.com/btrylclothing/" class="link" target="_blank">
+                <h5 class="inline">
+                    instagram
+                </h5>
+            </a>
+            <p class="inline">
+                &nbsp; | &nbsp;
+            </p>
+            </a>
+            <a class="link" href="mailto:btrylclothing@hotmail.com">
+                <h5 class="inline">
+                    mail
+                </h5>
+            </a>
+            <a class="link">
+                <br />
+                <h5 class="inline">
+                    copyright Betrayal TM &nbsp;| &nbsp; <a href="https://instagram.com/ned_de_simon" class="link"> Made
+                        by
+                        Simon</a>
+                </h5>
+            </a>
+        </div>
+    </div>
+    <a href="succesful.html" target="_self" style="display: none;" id="hidden-btn"></a>
+</body>
+<script>
+    function sendMsg() {
+
+        var vornameVal = document.getElementById("vorname").value;
+        var nameVal = document.getElementById("name").value;
+        var nummerVal = document.getElementById("nummer").value;
+        var adresseVal = document.getElementById("adresse").value;
+        var produktVal = document.getElementById("produkt").value;
+        var anzVal = document.getElementById("anz").value;
+
+
+        // var win = window.open(`https://wa.me/${410795657025}?text=aaaaaa`, '_blank');
+        var request = new XMLHttpRequest();
+        request.open("POST", "https://discordapp.com/api/webhooks/844281270670590002/-AJaYkyZ5I5MwjboCPMxSNFr_KmUqLutIILWhy1nw5qDpAlZ3ii_ZWIis4AkmtziXIRU");
+        request.setRequestHeader('Content-type', 'application/json');
+
+        var params = {
+            username: "Simon sin Bstelligs Bot",
+            avatar_url: "https://btrylclothing.neocities.org/imgs/logo_white.png",
+            content: null,
+            embeds: [{
+                title: "Neue Bestellung!",
+                description: `${anzVal} mal ${produktVal} \nVon ${vornameVal}  ${nameVal} \n${adresseVal}\nNummer: ${nummerVal}`,
+                color: 4456637
+            }]
+        };
+        request.send(JSON.stringify(params));
+
+        setTimeout(() => { document.getElementById("hidden-btn").click(); }, 1000);
+    }
+</script>
+
+</html>
