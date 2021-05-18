@@ -1,3 +1,66 @@
-.main{
+
+.black-back{
+    color: white;
+        position: relative;
+}
+.white-back{
+    position: relative;
     background-color: white;
+    color: black;
+}
+
+.tshirt-img-black{
+    height: auto;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+}
+.tshirt-img-white{
+    height: auto;
+    width: 50%;
+    display: block;
+}
+
+.buy-btn-white{
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 20%;
+}
+
+.buy-btn-black{
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0);
+    position: absolute;
+    top: 50%;
+    right: 20%;
+}
+
+.buy-btn-white:hover{
+    border: none;
+    background-color: rgba(0, 0, 0, 0.404);
+    color: white;
+}
+
+.buy-btn-black:hover{
+    border: none;
+    background-color: rgba(252, 252, 252, 0.404);
+    color:black;
+}
+
+.btn-text-white{
+    padding: 15px 32px;
+    margin: 4px 2px;
+    color: white;
+    text-decoration: none;
+    font-size: 200%;
+}
+
+.btn-text-black{
+    padding: 15px 32px;
+    margin: 4px 2px;
+    color: black;
+    text-decoration: none;
+    font-size: 200%;
 }
