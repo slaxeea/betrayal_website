@@ -10,6 +10,8 @@ Little Start Up
 
 
 Last changes:
-06.04.2021
+20.05.2021
 
+ Version 0.9.
  
+ Release soon, hopefully at least.
