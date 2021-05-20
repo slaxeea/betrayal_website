@@ -30,25 +30,30 @@
         </ul>
     </div>
 
+
+
     <div class="main">
         <form class="form" action="not_found.html">
-            <label for="vorname">Vorname: </label><br>
+            <label for="vorname">Name: </label><br>
             <input type="text" id="vorname" required> <br>
 
-            <label for="name">Name: </label><br>
+            <label for="name">Lastname: </label><br>
             <input type="text" id="name" required>
 
 
-            <label for="adresse">Adresse: </label>
+            <label for="adresse">Adress: </label>
             <input type="text" id="adresse" required> <br>
 
-            <label for="nummer">Nummer: </label>
+            <label for="plz">Town and Zipcode </label>
+            <input type="text" id="plz" required> <br>
+
+            <label for="nummer">Smartphone Nr.: </label>
             <input type="text" id="nummer" required><br><br>
 
-            <label for="anz">Anzahl: </label>
-            <input type="text" id="anz" required>
+            <label for="anz">Amount: </label>
+            <input type="number" id="anz" min="1" max="10" required>
 
-            <label for="anz">Produkt: </label>
+            <label for="anz">Product: </label>
             <select type="text" id="produkt"  required>
                 <option value="T-Shirt White">T-Shirt White</option>
                 <option value="T-Shirt Black">T-Shirt Black</option>
@@ -56,10 +61,18 @@
         </form><br>
 <br><br>
 
+<div class="qr-sec">
+<h3 class="qr-desc">You can pay here with twint and we will send you your order as soon as we get the payment<br><br>T-Shirts cost 30.- each. Shipment included</h3><br><br>
+<img src="imgs/qr-code.png" alt="qr-code" class="qr">
+<h3 class="qr-desc">If you can't, just fill out the form and we will contact you on WhatsApp</h3>
+</div>
     </div>
     
-    <br>
-    <br><br><button class="submit-btn" onclick="sendMsg()" >submit</button>
+    <br>    
+    <p class="error" id="error" >
+        
+    </p>
+    <br><br><button class="submit-btn" onclick="sendMsg()" >submit</button><br> <br>
     <br><br><br>
 
     <div class="foot">
@@ -97,12 +110,31 @@
 
         var vornameVal = document.getElementById("vorname").value;
         var nameVal = document.getElementById("name").value;
-        var nummerVal = document.getElementById("nummer").value;
+        var realnr = document.getElementById("nummer").value;
+        nummerVal = realnr.replace(/\s/g, '');
         var adresseVal = document.getElementById("adresse").value;
         var produktVal = document.getElementById("produkt").value;
+        var plzVal = document.getElementById("plz").value;
         var anzVal = document.getElementById("anz").value;
 
+        let reg =new RegExp ("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$");
+        let adresReg = new RegExp("[A-Za-z0-9'\.\-\s\,]");
 
+
+
+        if(!vornameVal || !nameVal || !nummerVal || !adresseVal || !produktVal || !plzVal || !anzVal){
+            document.getElementById('error').textContent="You forgot something!";
+        }             
+        else if(!reg.test(nummerVal)){
+            document.getElementById('error').textContent="Enter a correct phone number pls. Example: 011 111 11 11";
+        } 
+        else if(anzVal > 10 || anzVal <=0){
+            document.getElementById('error').textContent="The maximum is 10 Products, dont take it from the others :)";
+        }
+        else if(!adresReg.test(plzVal)){
+            document.getElementById('error').textContent="Please enter a Town with the Form '1111 Townname'";
+        }
+        else{
         // var win = window.open(`https://wa.me/${410795657025}?text=aaaaaa`, '_blank');
         var request = new XMLHttpRequest();
         request.open("POST", "https://discordapp.com/api/webhooks/844281270670590002/-AJaYkyZ5I5MwjboCPMxSNFr_KmUqLutIILWhy1nw5qDpAlZ3ii_ZWIis4AkmtziXIRU");
@@ -114,13 +146,14 @@
             content: null,
             embeds: [{
                 title: "Neue Bestellung!",
-                description: `${anzVal} mal ${produktVal} \nVon ${vornameVal}  ${nameVal} \n${adresseVal}\nNummer: ${nummerVal}`,
+                description: `${anzVal} mal ${produktVal} \nVon ${vornameVal}  ${nameVal} \n${adresseVal} \n${plzVal}\nNummer: ${realnr}`,
                 color: 4456637
             }]
         };
         request.send(JSON.stringify(params));
 
         setTimeout(() => { document.getElementById("hidden-btn").click(); }, 1000);
+    }
     }
 </script>
 

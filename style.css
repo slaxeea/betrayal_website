@@ -140,3 +140,66 @@ li a {
 .section2{
     border: none;
 }
+
+.values{
+  text-align: left;
+  position: relative;
+  display: block;
+  margin: auto;
+  width: 60%;
+  border: 1px solid #ffffffa6;
+  padding: 10px;
+
+}
+
+.left{
+  vertical-align: top;
+  display: inline-block; 
+  width: 30%;
+  height: 10%;
+}
+
+.center{
+  vertical-align: top;
+  display: inline-block; 
+  width: 30%;
+  height: 10%;
+}
+
+.right{
+  vertical-align: top;
+  display: inline-block; 
+  width: 30%;
+  height: 10%;
+}
+
+.little-imgs{
+  width: 5%;
+  height: auto;
+  display: inline-block;
+}
+
+@font-face { font-family: Coco Gothic; src: url('fonts/CocoGothic-Fat_trial.ttf'); } 
+.words{
+  font-family: Coco Gothic;
+  font-style: italic;
+}
+
+.person-text{
+  display: inline;
+  vertical-align: top;
+}.person-desc{
+  display: inline-block;
+}
+
+.person-name{
+  display: inline;
+  margin: 20px;
+}
+
+.portrait{
+  width: 50%;
+  height: auto;
+
+  margin: 20px;
+}
