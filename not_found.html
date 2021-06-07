@@ -3,9 +3,8 @@
 <html>
   <head>
     <title>Betrayal by Michele</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="navbtn.css" />
-    <link rel="import" href="footer.html">
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/new_navbtn.css" />
     <link rel="shortcut icon" type="image/png" href="imgs/favicon.png"/>
     <meta charset="utf-8" />
     <meta name="description" content="Betrayal by Michel Biondi" />
@@ -18,32 +17,16 @@
 
   <body>
     <div class="head">
-      <ul class="nav-bar">
-        <li>
-          <a
-            href="about.html"
-            class="btn-flip"
-            data-back="about"
-            data-front="about"
-          ></a>
-        </li>
-        <li>
-          <a
-            href="collections.html"
-            class="btn-flip"
-            data-back="collections"
-            data-front="collections"
-          ></a>
-        </li>
-        <li>
-          <a
-            href="index.html"
-            class="btn-flip"
-            data-back="home"
-            data-front="home"
-          ></a>
-        </li>
-      </ul>
+
+        <div class="grid-container">
+          <div class="head" id="head">
+            <ul class="nav-bar">
+                <li><a href="about.html"  class="btn-flip"  id="a">about</a></li>
+                <li><a href="collections.html"  class="btn-flip" >collections</a></li>
+                <li><a href="index.html"  class="btn-flip" >home</a></li>
+              </ul>
+          </div>
+        </div>
     </div>
 
     <div class="main">        
