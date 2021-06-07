@@ -1,0 +1,88 @@
+.main{
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+    padding: 20px 20px;
+}
+
+form{
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    display: block;
+}
+
+input{
+    border-radius: 4px;
+    padding: 6px 10px;
+    margin: 8px 0;
+    border: 2px solid rgba(255, 255, 255, 0.699);
+    color: white;
+    background-color: black ;
+
+    width: 100%;
+}
+
+#produkt, #size{
+    border-radius: 4px;
+    padding: 6px 10px;
+    margin: 8px 0;
+    border: 2px solid rgba(255, 255, 255, 0.699);
+    background-color: black;
+    color: white;
+    width: 105%;
+}
+
+.submit-btn{
+display: block;
+  border: 1px solid #dbdbdbbd;
+  background-color: rgba(0, 0, 0, 0);
+  color: #dbdbdbbd;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  text-decoration-color: #81818100;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  margin: auto;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.error{
+    color: red;
+    font-size: medium;
+    text-align: center;
+}
+
+
+.qr{
+  width: 50%;
+  height: auto;
+}
+.qr-desc{
+  margin-bottom: 0;
+}
+.qr-sec{
+  width: 20%;
+  margin-left: 5%;
+  text-align: justify;
+}
+
+
+
