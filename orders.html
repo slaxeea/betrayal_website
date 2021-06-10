@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/new_navbtn.css" />
     <link rel="import" href="style/footer.html">
-    <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="style/form.css" />
     <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
     <meta charset="utf-8" />
     <meta name="description" content="Betrayal by Michel Biondi" />
@@ -68,22 +68,22 @@
                         <option value="l">L</option>
                         <option value="xl">XL</option>
                     </select>
+
+                    <br>
+                    <br>
+                <label for="cb">I can pay with twint</label><br>
+                <input type="checkbox" id="cb" value="Twint" checked="true">
                 </form><br>
                 <br><br>
 
-                <div class="qr-sec">
-                    <h3 class="qr-desc">You can pay here with twint and we will send you your order as soon as we get
-                        the payment<br><br>T-Shirts cost 30.- each. Shipment included</h3><br><br>
-                    <img src="imgs/qr-code.png" alt="qr-code" class="qr">
-                    <h3 class="qr-desc">If you can't, just fill out the form and we will contact you on WhatsApp</h3>
-                </div>
+                
             </div>
 
             <br>
             <p class="error" id="error">
 
             </p>
-            <br><br><button class="submit-btn" onclick="sendMsg()">submit</button><br> <br>
+            <br><br><button class="submit-btn" onclick="sendMsg()">Continue to payment</button><br> <br>
             <br><br><br>
 
             <div class="foot">
@@ -115,7 +115,7 @@
                     </a>
                 </div>
             </div>
-            <a href="animation.html" target="_self" style="display: none;" id="hidden-btn"></a>
+            <a href="payment.html" target="_self" style="display: none;" id="hidden-btn"></a>
         </body>
         <script>
             function sendMsg() {
@@ -129,6 +129,7 @@
                 var plzVal = document.getElementById("plz").value;
                 var anzVal = document.getElementById("anz").value;
                 var sizeVal = document.getElementById("size").value;
+                var canTwint = document.getElementById("cb").checked;
 
                 let current = new Date();
                 let cDate = current.getDate() + '.' + (current.getMonth() + 1) + '.' + current.getFullYear();
@@ -154,6 +155,12 @@
                     document.getElementById('error').textContent = "Please enter a Town with the Form '1111 Townname'";
                 }
                 else {
+
+                    console.log(canTwint);
+                    if(canTwint!==true){
+                        document.getElementById("hidden-btn").setAttribute('href', 'payment_noTwint.html');
+                    }
+
                     // var win = window.open(`https://wa.me/${410795657025}?text=aaaaaa`, '_blank');
                     var request = new XMLHttpRequest();
                     request.open("POST", "https://discordapp.com/api/webhooks/844281270670590002/-AJaYkyZ5I5MwjboCPMxSNFr_KmUqLutIILWhy1nw5qDpAlZ3ii_ZWIis4AkmtziXIRU");
@@ -165,7 +172,10 @@
                         content: null,
                         embeds: [{
                             title: "Neue Bestellung!",
-                            description: `${anzVal} mal ${produktVal} \nGrösse ${sizeVal}\n\nVon ${vornameVal}  ${nameVal} \n${adresseVal} \n${plzVal}\n\nNummer: ${realnr}\n\nWurde bestellt am ${cDate} um ${cTime} \n\n`,
+                            description: `${anzVal} mal ${produktVal} \nGrösse ${sizeVal}\n\nVon ${vornameVal}  ${nameVal} \n${adresseVal} \n${plzVal}\n\nNummer: ${realnr}
+                            \n\nWurde bestellt am ${cDate} um ${cTime} \n\n
+                            Kann Zahlen mit Twint: ${canTwint} \n\n
+                            `,
                             color: 4456637
                         }]
                     };
