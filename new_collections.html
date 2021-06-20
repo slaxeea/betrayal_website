@@ -41,15 +41,15 @@
 
         <!-- Full-width images with number and caption text -->
         <div class="slide-white fade">
-          <img src="imgs/michele.png"  alt="product image">
+          <img src="https://media.discordapp.net/attachments/718533319477821482/856244492244090900/IMG-20210620-WA0003.jpg?width=502&height=669"  alt="product image">
         </div>
       
         <div class="slide-white fade">
-          <img src="imgs/tharakan.png"  alt="product image">
+          <img src="https://media.discordapp.net/attachments/718533319477821482/856244491270094918/IMG-20210620-WA0005.jpg?width=502&height=669"  alt="product image">
         </div>
       
         <div class="slide-white fade">
-          <img src="imgs/simon.png"  alt="product image">
+          <img src="https://media.discordapp.net/attachments/718533319477821482/856243729265721384/IMG-20210620-WA0056.jpg?width=502&height=669"  alt="product image">
         </div>
       
   <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
@@ -93,15 +93,15 @@
 
       <!-- Full-width images with number and caption text -->
       <div class="slide-black fade">
-        <img src="imgs/michele.png"  alt="product image">
+        <img src="https://media.discordapp.net/attachments/718533319477821482/856243729537695754/IMG-20210620-WA0054.jpg?width=502&height=669"  alt="product image">
       </div>
     
       <div class="slide-black fade">
-        <img src="imgs/tharakan.png"  alt="product image">
+        <img src="https://media.discordapp.net/attachments/718533319477821482/856243790356807740/IMG-20210620-WA0045.jpg?width=502&height=669"  alt="product image">
       </div>
     
       <div class="slide-black fade">
-        <img src="imgs/simon.png"  alt="product image">
+        <img src="https://media.discordapp.net/attachments/718533319477821482/856244007553466398/IMG-20210620-WA0027.jpg?width=502&height=669"  alt="product image">
       </div>
     
 <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
@@ -152,16 +152,21 @@ function onBtnClick(product){
 </script>
 
 
-<script type="text/javascript">var slideIndex = [1,1];
-  /* Class the members of each slideshow group with different CSS classes */
+<script type="text/javascript">
+var slideIndex = [1,1];
   var slideId = ["slide-black", "slide-white"]
-  showSlides(1, 0);
-  showSlides(1, 1);
+
   
   function plusSlides(n, no) {
     showSlides(slideIndex[no] += n, no);
+    
   }
   
+  setInterval(function(){
+    plusSlides(1,1)
+    plusSlides(1,0)
+  },3000)
+
   function showSlides(n, no) {
     var i;
     var x = document.getElementsByClassName(slideId[no]);
@@ -172,6 +177,12 @@ function onBtnClick(product){
     }
     x[slideIndex[no]-1].style.display = "block";
   } 
+        
+  document.addEventListener('DOMContentLoaded', function () {
+      
+    plusSlides(1,1)
+    plusSlides(1,0)
+        }, false);
   </script>
 
   <div class="foot">
