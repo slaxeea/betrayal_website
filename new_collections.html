@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Betrayal by Michele</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/new_navbtn.css" />
+    <link rel="stylesheet" href="style/collections.css" />
+    <link rel="stylesheet" href="style/slideshow.css" />
+    <link rel="shortcut icon" type="image/png" href="imgs/favicon.png"/>
+    <meta charset="utf-8" />
+    <meta name="description" content="Betrayal by Michel Biondi" />
+    <meta name="keywords" content="Betrayal" />
+    <meta name="author" content="Michele Biondi & Simon Kappeler" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta lang="en" />
+
+  </head>
+
+<body>
+  <div class="head">
+
+      <div class="grid-container">
+        <div class="head" id="head">
+          <ul class="nav-bar">
+              <li><a href="about.html"  class="btn-flip"  id="a">about</a></li>
+              <li><a href="collections.html"  class="btn-flip" >collections</a></li>
+              <li><a href="index.html"  class="btn-flip" >home</a></li>
+            </ul>
+        </div>
+  </div>
+  </div>
+
+  <div class="section2" id="section2">
+    <br>
+
+    <div class="black-back">      
+      
+      <div class="slideshow-container-white" >
+
+        <!-- Full-width images with number and caption text -->
+        <div class="slide-white fade">
+          <img src="imgs/michele.png"  alt="product image">
+        </div>
+      
+        <div class="slide-white fade">
+          <img src="imgs/tharakan.png"  alt="product image">
+        </div>
+      
+        <div class="slide-white fade">
+          <img src="imgs/simon.png"  alt="product image">
+        </div>
+      
+  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+      </div>
+
+
+      <div class="product-white">
+        <h2 class="product-title-white">
+          Betrayal White Basic Oversized T
+        </h2>
+        <h3 class="product-desc-white">
+          100% Bio Cotton <br>
+          Crewneck<br>
+
+          Casual fit<br>
+
+          Dropped shoulders<br>
+
+          Fits bigger than actual Size. <br>      
+          
+        </h3>  
+        <!--
+        <button class="btn-disabled-white" >
+          <a class="btn-text-white"   >Sold out!</a>
+        </button>
+        -->
+
+           <button class="buy-btn-black" onclick="onBtnClick('T-Shirt White')">
+          <a class="btn-text-white" >Buy Now</a>
+        </button>
+      </div>
+    </div>
+
+
+    <br>
+
+
+    <div class="white-back">            
+      <div class="slideshow-container">
+
+      <!-- Full-width images with number and caption text -->
+      <div class="slide-black fade">
+        <img src="imgs/michele.png"  alt="product image">
+      </div>
+    
+      <div class="slide-black fade">
+        <img src="imgs/tharakan.png"  alt="product image">
+      </div>
+    
+      <div class="slide-black fade">
+        <img src="imgs/simon.png"  alt="product image">
+      </div>
+    
+<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+<a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+    </div>
+    
+      
+      <div class="product-black">
+        <h2 class="product-title-black">
+          Betrayal Black Basic Oversized T
+        </h2>
+        <h3 class="product-desc-black">
+          100% Bio Cotton <br>
+          Crewneck<br>
+
+          Casual fit<br>
+
+          Dropped shoulders<br>
+
+          Fits bigger than actual Size. <br>
+        </h3>
+        <!--
+        <button class="btn-disabled-black" >
+          <a class="btn-text-black"   >Sold out!</a>
+        </button>
+      -->
+                  
+          <button class="buy-btn-white" onclick="onBtnClick('T-Shirt Black')" >
+          <a class="btn-text-black"   >Buy Now</a>
+        </button>
+      </div><br>
+    </div>
+
+  </div>
+  <br>
+  <br>
+
+
+  <a style="display: none" href="orders.html" id="toOrders"></a>
+
+<script type="text/javascript">
+
+function onBtnClick(product){
+
+  localStorage.setItem("produkt", product);
+  document.getElementById("toOrders").click();
+}
+</script>
+
+
+<script type="text/javascript">var slideIndex = [1,1];
+  /* Class the members of each slideshow group with different CSS classes */
+  var slideId = ["slide-black", "slide-white"]
+  showSlides(1, 0);
+  showSlides(1, 1);
+  
+  function plusSlides(n, no) {
+    showSlides(slideIndex[no] += n, no);
+  }
+  
+  function showSlides(n, no) {
+    var i;
+    var x = document.getElementsByClassName(slideId[no]);
+    if (n > x.length) {slideIndex[no] = 1}
+    if (n < 1) {slideIndex[no] = x.length}
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    x[slideIndex[no]-1].style.display = "block";
+  } 
+  </script>
+
+  <div class="foot">
+    <!--footer stuff-->
+    <div class="item5">
+      <hr />
+      <a href="https://www.instagram.com/btrylclothing/" class="link" target="_blank">
+        <h5 class="inline">
+          instagram
+        </h5>
+      </a>
+      <p class="inline">
+        &nbsp; | &nbsp;
+      </p>
+      </a>
+      <a class="link" href="mailto:btrylclothing@hotmail.com">
+        <h5 class="inline">
+          mail
+        </h5>
+      </a>
+      <a class="link">
+        <br />
+        <h5 class="inline">
+          copyright Betrayal TM &nbsp;| &nbsp; <a href="https://instagram.com/ned_de_simon" class="link"> Made by
+            Simon</a>
+        </h5>
+      </a>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
