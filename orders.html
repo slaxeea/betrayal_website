@@ -6,7 +6,7 @@
     <title>Betrayal by Michele</title>
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/new_navbtn.css" />
-    <link rel="import" href="style/footer.html">
+    <link rel="stylesheet" href="style/checkbox.css" />
     <link rel="stylesheet" href="style/form.css" />
     <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
     <meta charset="utf-8" />
@@ -50,7 +50,11 @@
                     <input type="text" id="plz" required> <br>
 
                     <label for="nummer">Smartphone Nr.: </label>
-                    <input type="text" id="nummer" required><br><br>
+                    <input type="text" id="nummer" required><br>
+
+                    <label for="insta">Instagram (if you've got one) </label>
+                    <input type="text" id="insta">                  
+                    <br><br>
 
                     <label for="anz">Amount: </label>
                     <input type="number" id="anz" min="1" max="10" required>
@@ -63,6 +67,7 @@
 
                     <label for="size">Size: </label>
                     <select type="text" id="size" required>
+                        <option value="xs">XS</option>
                         <option value="s">S</option>
                         <option value="m">M</option>
                         <option value="l">L</option>
@@ -71,8 +76,20 @@
 
                     <br>
                     <br>
-                <label for="cb">I can pay with twint</label><br>
-                <input type="checkbox" id="cb" value="Twint" checked="true">
+                    
+                    <!--
+                    <span class="cb-container">
+                        <input type="checkbox" id="cb" value="Twint" checked="false">
+                        <label for="cb">I can pay with twint</label><br>
+                </span>
+                    -->
+
+                    <label for="toggle" ><input class="input" type="checkbox" id="toggle" />
+                        <div class="toggle-wrapper"onclick="toggle()"><span class="selector"></span></div>
+                        <p class="notification">I can pay with twint: <span class="selected"></span></p>
+                    </label>
+
+
                 </form><br>
                 <br><br>
 
@@ -116,6 +133,7 @@
                 </div>
             </div>
             <a href="payment.html" target="_self" style="display: none;" id="hidden-btn"></a>
+            <p style="display: none" id="hidden-text">False</p>
         </body>
         <script>
             function sendMsg() {
@@ -129,7 +147,13 @@
                 var plzVal = document.getElementById("plz").value;
                 var anzVal = document.getElementById("anz").value;
                 var sizeVal = document.getElementById("size").value;
-                var canTwint = document.getElementById("cb").checked;
+                var canTwint = document.getElementById("hidden-text").innerHTML;
+                var instaval = document.getElementById("insta").value;
+
+
+                var api = "844281270670590002";
+                var base = "https://discordapp.com/api/webhooks/"+api;
+                var token = base+"/-AJaYkyZ5I5MwjboCPMxSNFr_KmUqLutIILWhy1nw5qDpAlZ3ii_ZWIis4AkmtziXIRU";
 
                 let current = new Date();
                 let cDate = current.getDate() + '.' + (current.getMonth() + 1) + '.' + current.getFullYear();
@@ -156,14 +180,13 @@
                 }
                 else {
 
-                    console.log(canTwint);
-                    if(canTwint!==true){
+                    if(canTwint!=="True"){
                         document.getElementById("hidden-btn").setAttribute('href', 'payment_noTwint.html');
                     }
 
                     // var win = window.open(`https://wa.me/${410795657025}?text=aaaaaa`, '_blank');
                     var request = new XMLHttpRequest();
-                    request.open("POST", "https://discordapp.com/api/webhooks/844281270670590002/-AJaYkyZ5I5MwjboCPMxSNFr_KmUqLutIILWhy1nw5qDpAlZ3ii_ZWIis4AkmtziXIRU");
+                    request.open("POST", token);
                     request.setRequestHeader('Content-type', 'application/json');
 
                     var params = {
@@ -172,7 +195,8 @@
                         content: null,
                         embeds: [{
                             title: "Neue Bestellung!",
-                            description: `${anzVal} mal ${produktVal} \nGrösse ${sizeVal}\n\nVon ${vornameVal}  ${nameVal} \n${adresseVal} \n${plzVal}\n\nNummer: ${realnr}
+                            description: `${anzVal} mal ${produktVal} \nGrösse ${sizeVal}\n\nVon ${vornameVal}  ${nameVal} \n${adresseVal} \n${plzVal}\n\n
+                            Nummer: ${realnr} \n Insta: ${instaval}
                             \n\nWurde bestellt am ${cDate} um ${cTime} \n\n
                             Kann Zahlen mit Twint: ${canTwint} \n\n
                             `,
@@ -184,6 +208,24 @@
                     setTimeout(() => { document.getElementById("hidden-btn").click(); }, 1000);
                 }
             }
+
+
+            function toggle(){
+                var rn = document.getElementById("hidden-text");
+                if(rn.innerHTML=="True"){
+                    rn.innerHTML = "False"
+                } else{                    
+                    rn.innerHTML = "True"
+                }
+            }
         </script>
+
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById("produkt").value = localStorage.getItem("produkt");
+
+    }, false);
+</script>
 
 </html>

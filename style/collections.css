@@ -116,3 +116,155 @@
     top: 20%;
     right: 10%;
 }
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+   
+    .black-back{
+        color: white;
+        position: relative;
+        width: 100%;
+    }
+    .white-back{
+        position:relative;
+        background-color: white;
+        color: black;
+        width: 100%;
+    }
+    
+    .tshirt-img-black{
+        height: auto;
+        width: 80%;
+        margin-left:10%;
+        margin-right:10%;
+        display: block;
+        position: relative;
+       
+    }
+    .tshirt-img-white{
+        height: auto;
+        width: 80%;
+        margin-right:10%;
+        margin-left:10%;
+        display: block;
+        position: relative;
+   
+    }
+    
+    .buy-btn-white{
+        border: 1px solid rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0);
+        position: relative;
+        left: auto;
+    }
+    
+    .buy-btn-black{
+        border: 1px solid rgb(255, 255, 255);
+        background-color: rgba(255, 255, 255, 0);
+        position: relative;
+        left: auto;
+    }
+    
+    .buy-btn-white:hover{
+        border: none;
+        background-color: rgba(0, 0, 0, 0.404);
+        color: white;
+    }
+    
+    .buy-btn-black:hover{
+        border: none;
+        background-color: rgba(252, 252, 252, 0.404);
+        color:black;
+    }
+    
+    .btn-disabled-black{    
+        border: 1px solid rgb(0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+        position: center;
+        left: 5%;
+    }
+    .btn-disabled-white{    
+        border: 1px solid rgb(255, 255, 255);
+        background-color: rgba(255, 255, 255, 0);
+        position: center;
+        left: 5%;
+    }
+    
+    
+    .btn-text-white{
+        padding: 15px 32px;
+        margin: 4px 2px;
+        color: white;
+        text-decoration: none;
+        font-size: 200%;
+    }
+    
+    .btn-text-black{
+        padding: 15px 32px;
+        margin: 4px 2px;
+        color: black;
+        text-decoration: none;
+        font-size: 200%;
+    }
+    
+    .product-title-black{
+        padding: 15px 32px;
+        color: black;
+        text-decoration: none;
+        font-size: 150%;
+        margin-right:10%;
+        margin-left:10%;
+     
+    }
+    .product-title-white{
+        padding: 15px 32px;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        font-size: 150%;
+        margin-right:10%;
+        margin-left:10%;
+        
+    }
+    .product-desc-black{
+       padding: 15px 32px;
+        color: black;
+        text-decoration: none;
+        font-size: 100%;
+        margin-right:10%;
+        margin-left:10%;
+       
+
+    }.product-desc-white{
+       padding: 15px 32px;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        font-size: 100%;
+        margin-right:10%;
+        margin-left:10%;
+      
+    }
+    
+    .product-black{
+        display: block;
+        position: relative;
+        top: auto;
+        left: auto;
+        text-align: center;
+      
+       
+    }
+    
+    
+    .product-white{
+        display: block;
+       position: relative;
+        top: auto;
+        right: auto;
+     text-align: center;
+        
+    }
+
+}
