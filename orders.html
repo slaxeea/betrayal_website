@@ -56,23 +56,6 @@
                     <input type="text" id="insta">                  
                     <br><br>
 
-                    <label for="anz">Amount: </label>
-                    <input type="number" id="anz" min="1" max="10" required>
-
-                    <label for="anz">Product: </label>
-                    <select type="text" id="produkt" required>
-                        <option value="T-Shirt White">T-Shirt White</option>
-                        <option value="T-Shirt Black">T-Shirt Black</option>
-                    </select>
-
-                    <label for="size">Size: </label>
-                    <select type="text" id="size" required>
-                        <option value="xs">XS</option>
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                    </select>
 
                     <br>
                     <br>
@@ -135,6 +118,9 @@
             <a href="payment.html" target="_self" style="display: none;" id="hidden-btn"></a>
             <p style="display: none" id="hidden-text">False</p>
         </body>
+
+        
+<script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
         <script>
             function sendMsg() {
 
@@ -143,10 +129,7 @@
                 var realnr = document.getElementById("nummer").value;
                 nummerVal = realnr.replace(/\s/g, '');
                 var adresseVal = document.getElementById("adresse").value;
-                var produktVal = document.getElementById("produkt").value;
                 var plzVal = document.getElementById("plz").value;
-                var anzVal = document.getElementById("anz").value;
-                var sizeVal = document.getElementById("size").value;
                 var canTwint = document.getElementById("hidden-text").innerHTML;
                 var instaval = document.getElementById("insta").value;
 
@@ -166,14 +149,11 @@
 
 
                 // Check if a field is empty
-                if (!vornameVal || !nameVal || !nummerVal || !adresseVal || !produktVal || !plzVal || !anzVal || !sizeVal) {
+                if (!vornameVal || !nameVal || !nummerVal || !adresseVal || !plzVal ) {
                     document.getElementById('error').textContent = "You forgot something!";
                 }
                 else if (!reg.test(nummerVal)) {
                     document.getElementById('error').textContent = "Enter a correct phone number pls. Example: 011 111 11 11";
-                }
-                else if (anzVal > 10 || anzVal <= 0) {
-                    document.getElementById('error').textContent = "The maximum is 10 Products, dont take it from the others :)";
                 }
                 else if (!adresReg.test(plzVal)) {
                     document.getElementById('error').textContent = "Please enter a Town with the Form '1111 Townname'";
@@ -189,13 +169,27 @@
                     request.open("POST", token);
                     request.setRequestHeader('Content-type', 'application/json');
 
+                    var cart = cartLS.list();
+                    var jsoncart = { };
+                    
+                    for(i=0; i<cart.length;i++){
+                        jsoncart[i] = {
+                            name: cart[i].name,
+                            quantity: cart[i].quantity,
+                            size: localStorage.getItem("size-"+cart[i].name)
+                        };
+                    }
+
                     var params = {
                         username: "Simon sin Bstelligs Bot",
                         avatar_url: "https://btrylclothing.neocities.org/imgs/logo_white.png",
                         content: null,
                         embeds: [{
                             title: "Neue Bestellung!",
-                            description: `${anzVal} mal ${produktVal} \nGrösse ${sizeVal}\n\nVon ${vornameVal}  ${nameVal} \n${adresseVal} \n${plzVal}\n\n
+                            description: `
+                            ${JSON.stringify(jsoncart)}
+
+                            \n\nVon ${vornameVal}  ${nameVal} \n${adresseVal} \n${plzVal}\n\n
                             Nummer: ${realnr} \n Insta: ${instaval}
                             \n\nWurde bestellt am ${cDate} um ${cTime} \n\n
                             Kann Zahlen mit Twint: ${canTwint} \n\n
@@ -221,11 +215,5 @@
         </script>
 
 
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById("produkt").value = localStorage.getItem("produkt");
-
-    }, false);
-</script>
 
 </html>

@@ -19,6 +19,20 @@
   </head>
 
 <body>
+
+
+  <div class="cart-container" id="cart-container">
+    <img class="cart-icon" src="imgs/cart.png" id="cart-icon" alt="shopping cart">
+    <p class="cart-text" id="cart-text">(0)</p>
+    <a href="checkout.html" style="display: none" id="toCheckoutlink">
+    </a>
+
+      <button class="cart-button" onclick="toCheckout()" id="cart-button" style="display: none">
+        To Checkout
+        </button>
+  </div>
+
+
   <div class="head">
 
       <div class="grid-container">
@@ -32,6 +46,9 @@
   </div>
   </div>
 
+
+
+
   <div class="section2" id="section2">
     <br>
 
@@ -39,7 +56,6 @@
       
       <div class="slideshow-container-white" >
 
-        <!-- Full-width images with number and caption text -->
         <div class="slide-white fade">
           <img src="https://media.discordapp.net/attachments/718533319477821482/856244492244090900/IMG-20210620-WA0003.jpg?width=502&height=669"  alt="product image">
         </div>
@@ -77,11 +93,26 @@
           <a class="btn-text-white"   >Sold out!</a>
         </button>
         -->
+        <div class="buy-div">
+          <div class="size-div">
+        <label for="size1">Size:  </label>                            
+        <select type="text" id="size1" class="size-select" required>
+          <option value="xs">XS</option>
+          <option value="s">S</option>
+          <option value="m">M</option>
+          <option value="l">L</option>
+          <option value="xl">XL</option>
+      </select></div>
+
+      <div class="amount-div">
+      <label for="amount">Amount:  </label> 
+      <input type="number" id="amount" class="amount-select" required>
+      </div>
+    </div>
 
            <button class="buy-btn-black" onclick="onBtnClick('T-Shirt White')">
-          <a class="btn-text-white" >Buy Now</a>
+          <a class="btn-text-white" >Add to cart</a>
         </button>
-      </div>
     </div>
 
 
@@ -106,6 +137,7 @@
     
 <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
 <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+
     </div>
     
       
@@ -128,9 +160,26 @@
           <a class="btn-text-black"   >Sold out!</a>
         </button>
       -->
+      
+      <div class="buy-div" >
+        <div class="size-div">
+      <label for="size2">Size:  </label>                            
+      <select type="text" id="size2" class="size-select" style="color: black" required>
+        <option value="xs">XS</option>
+        <option value="s">S</option>
+        <option value="m">M</option>
+        <option value="l">L</option>
+        <option value="xl">XL</option>
+    </select></div>
+
+    <div class="amount-div">
+    <label for="amount">Amount:  </label> 
+    <input type="number" id="amount" class="amount-select" style="color: black" required>
+    </div>
+  </div>
                   
           <button class="buy-btn-white" onclick="onBtnClick('T-Shirt Black')" >
-          <a class="btn-text-black"   >Buy Now</a>
+          <a class="btn-text-black"   >Add to cart</a>
         </button>
       </div><br>
     </div>
@@ -142,17 +191,54 @@
 
   <a style="display: none" href="orders.html" id="toOrders"></a>
 
+<script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
 <script type="text/javascript">
 
 function onBtnClick(product){
+  document.getElementById("cart-button").style.display ="inline-block";
+  var amount = document.getElementById("amount").value;
+  for(i = 0;i<amount;i++){
+  if(product =='T-Shirt Black'){ 
+    if(cartLS.exists(0)){
+      cartLS.quantity(0, 1);
+    }else{
+    cartLS.add({
+      id: 1,
+      name: product,
+      price: 35
+    })
+    localStorage.setItem("size-T-Shirt Black", document.getElementById("size2").value)
+  }  
+  } 
 
-  localStorage.setItem("produkt", product);
-  document.getElementById("toOrders").click();
+  if(product =='T-Shirt White'){    
+    if(cartLS.exists(1)){
+      cartLS.quantity(1, 1);
+    }else{
+    cartLS.add({
+      id: 2,
+      name: product,
+      price: 35
+    })
+    
+    localStorage.setItem("size-T-Shirt White", document.getElementById("size1").value)
+  }
+  }  
 }
-</script>
 
+  var cart = (cartLS.list());
+  var amount =0;
+  for(i =0;i<cart.length;i++){
+    amount+= cart[i].quantity;
+  }
 
-<script type="text/javascript">
+  localStorage.setItem("cart", JSON.stringify(cartLS.list()));
+
+  var text = ('(' +amount+')');
+  document.getElementById("cart-text").innerHTML = text;
+ //  console.log(amount);
+}
+
 var slideIndex = [1,1];
   var slideId = ["slide-black", "slide-white"]
 
@@ -165,7 +251,7 @@ var slideIndex = [1,1];
   setInterval(function(){
     plusSlides(1,1)
     plusSlides(1,0)
-  },3000)
+  },3500)
 
   function showSlides(n, no) {
     var i;
@@ -178,12 +264,52 @@ var slideIndex = [1,1];
     x[slideIndex[no]-1].style.display = "block";
   } 
         
-  document.addEventListener('DOMContentLoaded', function () {
-      
+  function toCheckout(){
+    console.log(localStorage.getItem("__cart"));
+    if(localStorage.getItem("__cart")!= null){
+      document.getElementById("toCheckoutlink").click();    
+    } else{
+    }
+  }
+
+  function scroll(){
+    return(window.scrollY);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {      
     plusSlides(1,1)
     plusSlides(1,0)
+    
+    if(localStorage.getItem("__cart")!= null){
+      document.getElementById("cart-button").style.display = "inline-block";
+    }
+    
+  var cart = (cartLS.list());
+  var amount =0;
+  for(i =0;i<cart.length;i++){
+    amount+= cart[i].quantity;
+  }
+
+  var text = ('(' +amount+')');
+  document.getElementById("cart-text").innerHTML = text;
+  
         }, false);
+
+      document.addEventListener('scroll', function(){
+        if(scroll()>916){
+          document.getElementById("cart-container").style.color = "black";
+        }else{          
+          document.getElementById("cart-container").style.color ="white"  ;
+        }
+
+      });
+
   </script>
+
+
+
+
+
 
   <div class="foot">
     <!--footer stuff-->

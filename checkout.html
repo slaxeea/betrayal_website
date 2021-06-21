@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Betrayal by Michele</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/new_navbtn.css" />
+    <link rel="stylesheet" href="style/checkbox.css" />
+    <link rel="stylesheet" href="style/form.css" />
+    <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
+    <meta charset="utf-8" />
+    <meta name="description" content="Betrayal by Michel Biondi" />
+    <meta name="keywords" content="Betrayal" />
+    <meta name="author" content="Michele Biondi & Simon Kappeler" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta lang="en" />
+
+</head>
+
+<body>
+    <div class="head">
+
+        <body>
+            <div class="grid-container">
+                <div class="head" id="head">
+                    <ul class="nav-bar">
+                        <li><a href="about.html" class="btn-flip" id="a">about</a></li>
+                        <li><a href="collections.html" class="btn-flip">collections</a></li>
+                        <li><a href="index.html" class="btn-flip">home</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <div class="main">
+
+                <table class="table">
+                    <tbody class="cart" id="cart">
+                    </tbody>
+                    <tfoot>
+                      <td></td> 
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="text-right">Total: <strong class="total" id="total"></strong></td>
+                      <td></td>
+                    </tfoot>
+                  </table>
+
+            </div>
+            <br><br>
+            <a href="orders.html" style="display: block; text-align:center;">
+            <button class="button">
+                Pay
+            </button>
+            </a>
+            
+        </body>
+        <script src="./dist/cart/dist/cart-localstorage.min.js" ></script>
+        <script type="text/javascript">
+        
+        function renderCart(items) {
+  const cart = document.querySelector(".cart")
+  const total = document.querySelector(".total")
+
+  cart.innerHTML = items.map((item) => `
+      <tr>
+        <td>#${item.id}</td>
+        <td>${item.name}</td>
+        <td>${item.quantity}</td>
+        <td style="width: 60px;"> 
+          <button type="button" class="btn btn-block btn-sm btn-outline-primary"
+            onClick="cartLS.quantity(${item.id},1)">+</button>
+        </td>
+        <td style="width: 60px;"> 
+          <button type="button" class="btn btn-block btn-sm btn-outline-primary"
+            onClick="cartLS.quantity(${item.id},-1)">-</button>
+        </td>
+        <td class="text-right">$${item.price}</td>
+        <td class="text-right"><Button class="btn btn-primary" onClick="cartLS.remove(${item.id})">Delete</Button></td>
+      </tr>`).join("")
+
+  total.innerHTML =  cartLS.total() + " CHF"
+}
+cartLS.onChange(renderCart)
+
+ renderCart(cartLS.list())
+ document.addEventListener('DOMContentLoaded', function () {
+                     renderCart(cartLS.list());
+
+        }, false);
+
+
+
+          </script>
+        
+        
+
+</html>

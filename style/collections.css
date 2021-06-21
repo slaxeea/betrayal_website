@@ -33,6 +33,7 @@
     border: 1px solid rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0);
     position: absolute;
+    margin-top: 5px;
     left: 5%;
 }
 
@@ -117,6 +118,33 @@
     right: 10%;
 }
 
+
+.size-select{
+    background-color: rgba(0, 0, 0, 0);
+    padding: 7px 15px;
+    color: white;
+    width: 10%;
+  }
+  
+.size-div{    
+    vertical-align: center;
+    font-size: 120%;
+    display: inline;
+    margin: 15px;
+    margin-left: 20px;
+  }
+
+.amount-select{    
+    background-color: rgba(0, 0, 0, 0);
+    padding: 7px 15px;
+    color: white;
+    width: 15%;
+}
+.amount-div{
+    vertical-align: center;
+    font-size: 120%;
+    display: inline;
+}
 
 
 

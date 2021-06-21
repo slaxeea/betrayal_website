@@ -227,6 +227,36 @@ li a {
   transform: translate(-50%, -50%);
 }
 
+.cart-icon{
+  margin: 10px;
+  height: 75%;
+  z-index: 1;
+}
+
+.cart-container{
+  top: 0;
+  left: 0;
+  position: sticky;
+  align-self: flex-start; 
+  display: flex;
+  align-items:center;
+}
+
+.cart-button{
+  width: 8%; 
+  margin: 10px;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  border:1px solid rgba(180, 178, 178, 0.61);
+  transition-duration: 0.2s;
+}
+
+.cart-button:hover{  
+  border:1px solid white;
+}
+
+
 @media screen and (max-width: 1000px) {
 
   .head {
