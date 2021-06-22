@@ -229,21 +229,19 @@ li a {
 
 .cart-icon{
   margin: 10px;
-  height: 75%;
+  width: 100px;
   z-index: 1;
 }
 
 .cart-container{
   top: 0;
   left: 0;
-  position: sticky;
-  align-self: flex-start; 
+  position: absolute;
   display: flex;
   align-items:center;
 }
 
 .cart-button{
-  width: 8%; 
   margin: 10px;
   padding: 8px;
   background-color: rgba(255, 255, 255, 0);
