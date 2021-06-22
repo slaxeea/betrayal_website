@@ -2,7 +2,9 @@
 
 Betrayal TM official Website
 
-Little Start Up
+Website for a lil' startup
+
+Made with big help from @livicy
 
 
 
