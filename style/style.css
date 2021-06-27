@@ -490,4 +490,20 @@ li a {
   }
  
 
+
+  .cart-container{
+    top: 0;
+    left: 0;
+    position:static;
+    display: flex;
+    align-items:center;
+  }  
+
+.cart-icon{
+  margin: 10px;
+  width: 80px;
+  z-index: 1;
+}
+
+  
 }
