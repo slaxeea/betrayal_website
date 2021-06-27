@@ -1,345 +1,326 @@
 <!DOCTYPE html>
 
 <html>
+    <head>
+        <title>Betrayal by Michele</title>
+        <link rel="stylesheet" href="style/style.css" />
+        <link rel="stylesheet" href="style/new_navbtn.css" />
+        <link rel="stylesheet" href="style/collections.css" />
+        <link rel="stylesheet" href="style/slideshow.css" />
+        <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
+        <meta charset="utf-8" />
+        <meta name="description" content="Betrayal by Michel Biondi" />
+        <meta name="keywords" content="Betrayal" />
+        <meta name="author" content="Michele Biondi & Simon Kappeler" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta lang="en" />
+    </head>
 
-  <head>
-    <title>Betrayal by Michele</title>
-    <link rel="stylesheet" href="style/style.css" />
-    <link rel="stylesheet" href="style/new_navbtn.css" />
-    <link rel="stylesheet" href="style/collections.css" />
-    <link rel="stylesheet" href="style/slideshow.css" />
-    <link rel="shortcut icon" type="image/png" href="imgs/favicon.png"/>
-    <meta charset="utf-8" />
-    <meta name="description" content="Betrayal by Michel Biondi" />
-    <meta name="keywords" content="Betrayal" />
-    <meta name="author" content="Michele Biondi & Simon Kappeler" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta lang="en" />
+    <body>
+        <div class="cart-container" id="cart-container">
+            <img class="cart-icon" src="https://cdn.discordapp.com/attachments/844178694150160405/856684437714501671/Unbenannt010.png" id="cart-icon" alt="shopping cart" />
+            <p class="cart-text" id="cart-text">(0)</p>
+            <a href="checkout.html" style="display: none;" id="toCheckoutlink"> </a>
 
-  </head>
-
-<body>
-
-
-  <div class="cart-container" id="cart-container">
-    <img class="cart-icon" src="https://cdn.discordapp.com/attachments/844178694150160405/856684437714501671/Unbenannt010.png" id="cart-icon" alt="shopping cart">
-    <p class="cart-text" id="cart-text">(0)</p>
-    <a href="checkout.html" style="display: none" id="toCheckoutlink">
-    </a>
-
-      <button class="cart-button" onclick="toCheckout()" id="cart-button" style="display: none">
-        To Checkout
-        </button>
-  </div>
-
-
-  <div class="head">
-
-      <div class="grid-container">
-        <div class="head" id="head">
-          <ul class="nav-bar">
-              <li><a href="about.html"  class="btn-flip"  id="a">about</a></li>
-              <li><a href="collections.html"  class="btn-flip" >collections</a></li>
-              <li><a href="index.html"  class="btn-flip" >home</a></li>
-            </ul>
+            <button class="cart-button" onclick="toCheckout()" id="cart-button" style="display: none;">
+                To Checkout
+            </button>
         </div>
-  </div>
-  </div>
 
-
-
-
-  <div class="section2" id="section2">
-    <br>
-
-    <div class="black-back">      
-      
-      <div class="slideshow-container-white" >
-
-        <div class="slide-white fade">
-          <img src='https://media.discordapp.net/attachments/718533319477821482/856244492244090900/IMG-20210620-WA0003.jpg?width=506&height=669' class="slide" alt="product image">
+        <div class="head">
+            <div class="grid-container">
+                <div class="head" id="head">
+                    <ul class="nav-bar">
+                        <li><a href="about.html" class="btn-flip" id="a">about</a></li>
+                        <li><a href="collections.html" class="btn-flip">collections</a></li>
+                        <li><a href="index.html" class="btn-flip">home</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      
-        <div class="slide-white fade">
-          <img src='https://media.discordapp.net/attachments/718533319477821482/856244491270094918/IMG-20210620-WA0005.jpg?width=506&height=669' class="slide" alt="product image">
-        </div>
-      
-        <div class="slide-white fade">
-          <img src='https://media.discordapp.net/attachments/718533319477821482/856243729265721384/IMG-20210620-WA0056.jpg?width=506&height=669' class="slide" alt="product image">
-        </div>
-      
-  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-      </div>
 
+        <div class="section2" id="section2">
+            <br />
 
-      <div class="product-white">
-        <h2 class="product-title-white">
-          Betrayal White Basic Oversized T
-        </h2>
-        <h3 class="product-desc-white">
-          100% Bio Cotton <br>
-          Crewneck<br>
+            <div class="black-back">
+                <div class="slideshow-container-white">
+                    <div class="slide-white fade">
+                        <img src="https://media.discordapp.net/attachments/718533319477821482/856244492244090900/IMG-20210620-WA0003.jpg?width=506&height=669" class="slide" alt="product image" />
+                    </div>
 
-          Casual fit<br>
+                    <div class="slide-white fade">
+                        <img src="https://media.discordapp.net/attachments/718533319477821482/856244491270094918/IMG-20210620-WA0005.jpg?width=506&height=669" class="slide" alt="product image" />
+                    </div>
 
-          Dropped shoulders<br>
+                    <div class="slide-white fade">
+                        <img src="https://media.discordapp.net/attachments/718533319477821482/856243729265721384/IMG-20210620-WA0056.jpg?width=506&height=669" class="slide" alt="product image" />
+                    </div>
 
-          Fits bigger than actual Size. <br>      
-          
-        </h3>  
-        <!--
+                    <div class="slide-white fade">
+                        <img src="https://media.discordapp.net/attachments/718533319477821482/856244491949178890/IMG-20210620-WA0002.jpg?width=502&height=669" class="slide" alt="product image" />
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+                </div>
+
+                <div class="product-white">
+                    <h2 class="product-title-white">
+                        Betrayal White Basic Oversized T
+                    </h2>
+                    <h3 class="product-desc-white">
+                        100% Bio Cotton <br />
+                        Crewneck<br />
+
+                        Casual fit<br />
+
+                        Dropped shoulders<br />
+
+                        Fits bigger than actual Size. <br />
+                    </h3>
+                    <!--
         <button class="btn-disabled-white" >
           <a class="btn-text-white"   >Sold out!</a>
         </button>
         -->
-        <div class="buy-div">
-          <div class="size-div">
-        <label for="size1">Size:  </label>                            
-        <select type="text" id="size1" class="size-select" required>
-          <option value="xs">XS</option>
-          <option value="s">S</option>
-          <option value="m">M</option>
-          <option value="l">L</option>
-          <option value="xl">XL</option>
-      </select></div>
+                    <div id="sec-to-hide1">
+                        <div class="buy-div">
+                            <div class="size-div">
+                                <label for="size1">Size: </label>
+                                <select type="text" id="size1" class="size-select" required>
+                                    <option value="xs">XS</option>
+                                    <option value="s">S</option>
+                                    <option value="m">M</option>
+                                    <option value="l">L</option>
+                                    <option value="xl">XL</option>
+                                </select>
+                            </div>
 
-      <div class="amount-div">
-      <label for="amount">Amount:  </label> 
-      <input type="number" id="amount" class="amount-select" required>
-      </div>
-    </div>
+                            <div class="amount-div">
+                                <label for="amount">Amount: </label>
+                                <input type="number" id="amount-white" class="amount-select" required />
+                            </div>
+                        </div>
 
-           <button class="buy-btn-black" onclick="onBtnClick('T-Shirt White')">
-          <a class="btn-text-white" >Add to cart</a>
-        </button>
-    </div>
+                        <button class="buy-btn-black" onclick="onBtnClick('T-Shirt White')">
+                            <a class="btn-text-white">Add to cart</a>
+                        </button>
+                    </div>
+                </div>
 
+                <br />
 
-    <br>
+                <div class="white-back">
+                    <div class="slideshow-container">
+                        <!-- Full-width images with number and caption text -->
+                        <div class="slide-black fade">
+                            <img src="https://media.discordapp.net/attachments/718533319477821482/856243729537695754/IMG-20210620-WA0054.jpg?width=502&height=669" class="slide" alt="product image" />
+                        </div>
 
+                        <div class="slide-black fade">
+                            <img src="https://media.discordapp.net/attachments/718533319477821482/856243790356807740/IMG-20210620-WA0045.jpg?width=502&height=669" class="slide" alt="product image" />
+                        </div>
 
-    <div class="white-back">            
-      <div class="slideshow-container">
+                        <div class="slide-black fade">
+                            <img src="https://media.discordapp.net/attachments/718533319477821482/856244007553466398/IMG-20210620-WA0027.jpg?width=502&height=669" class="slide" alt="product image" />
+                        </div>
 
-      <!-- Full-width images with number and caption text -->
-      <div class="slide-black fade">
-        <img src="https://media.discordapp.net/attachments/718533319477821482/856243729537695754/IMG-20210620-WA0054.jpg?width=502&height=669" class="slide" alt="product image">
-      </div>
-    
-      <div class="slide-black fade">
-        <img src="https://media.discordapp.net/attachments/718533319477821482/856243790356807740/IMG-20210620-WA0045.jpg?width=502&height=669" class="slide" alt="product image">
-      </div>
-    
-      <div class="slide-black fade">
-        <img src="https://media.discordapp.net/attachments/718533319477821482/856244007553466398/IMG-20210620-WA0027.jpg?width=502&height=669" class="slide" alt="product image">
-      </div>
-    
-<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-<a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                        <div class="slide-black fade">
+                            <img src="https://media.discordapp.net/attachments/718533319477821482/856244135522074664/IMG-20210620-WA0019.jpg?width=502&height=669" class="slide" alt="product image" />
+                        </div>
 
-    </div>
-    
-      
-      <div class="product-black">
-        <h2 class="product-title-black">
-          Betrayal Black Basic Oversized T
-        </h2>
-        <h3 class="product-desc-black">
-          100% Bio Cotton <br>
-          Crewneck<br>
+                        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                    </div>
 
-          Casual fit<br>
+                    <div class="product-black">
+                        <h2 class="product-title-black">
+                            Betrayal Black Basic Oversized T
+                        </h2>
+                        <h3 class="product-desc-black">
+                            100% Bio Cotton <br />
+                            Crewneck<br />
 
-          Dropped shoulders<br>
+                            Casual fit<br />
 
-          Fits bigger than actual Size. <br>
-        </h3>
-        <!--
-        <button class="btn-disabled-black" >
-          <a class="btn-text-black"   >Sold out!</a>
-        </button>
-      -->
-      
-      <div class="buy-div" >
-        <div class="size-div">
-      <label for="size2">Size:  </label>                            
-      <select type="text" id="size2" class="size-select" style="color: black" required>
-        <option value="xs">XS</option>
-        <option value="s">S</option>
-        <option value="m">M</option>
-        <option value="l">L</option>
-        <option value="xl">XL</option>
-    </select></div>
+                            Dropped shoulders<br />
 
-    <div class="amount-div">
-    <label for="amount">Amount:  </label> 
-    <input type="number" id="amount" class="amount-select" style="color: black" required>
-    </div>
-  </div>
-                  
-          <button class="buy-btn-white" onclick="onBtnClick('T-Shirt Black')" >
-          <a class="btn-text-black"   >Add to cart</a>
-        </button>
-      </div><br>
-    </div>
+                            Fits bigger than actual Size. <br />
+                        </h3>
 
-  </div>
-  <br>
-  <br>
+                        <div id="sec-to-hide2">
+                            <div class="buy-div">
+                                <div class="size-div">
+                                    <label for="size2">Size: </label>
+                                    <select type="text" id="size2" class="size-select" style="color: black;" required>
+                                        <option value="xs">XS</option>
+                                        <option value="s">S</option>
+                                        <option value="m">M</option>
+                                        <option value="l">L</option>
+                                        <option value="xl">XL</option>
+                                    </select>
+                                </div>
 
+                                <div class="amount-div">
+                                    <label for="amount">Amount: </label>
+                                    <input type="number" id="amount-black" class="amount-select" style="color: black;" required />
+                                </div>
+                            </div>
 
-  <a style="display: none" href="orders.html" id="toOrders"></a>
-
-<script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
-<script type="text/javascript">
-
-function onBtnClick(product){
-  document.getElementById("cart-button").style.display ="inline-block";
-  var amount = document.getElementById("amount").value;
-  for(i = 0;i<amount;i++){
-  if(product =='T-Shirt Black'){ 
-    if(cartLS.exists(0)){
-      cartLS.quantity(0, 1);
-    }else{
-    cartLS.add({
-      id: 1,
-      name: product,
-      price: 35
-    })
-    localStorage.setItem("size-T-Shirt Black", document.getElementById("size2").value)
-  }  
-  } 
-
-  if(product =='T-Shirt White'){    
-    if(cartLS.exists(1)){
-      cartLS.quantity(1, 1);
-    }else{
-    cartLS.add({
-      id: 2,
-      name: product,
-      price: 35
-    })
-    
-    localStorage.setItem("size-T-Shirt White", document.getElementById("size1").value)
-  }
-  }  
-}
-
-  var cart = (cartLS.list());
-  var amount =0;
-  for(i =0;i<cart.length;i++){
-    amount+= cart[i].quantity;
-  }
-
-  localStorage.setItem("cart", JSON.stringify(cartLS.list()));
-
-  var text = ('(' +amount+')');
-  document.getElementById("cart-text").innerHTML = text;
- //  console.log(amount);
-}
-
-var slideIndex = [1,1];
-  var slideId = ["slide-black", "slide-white"]
-
-  
-  function plusSlides(n, no) {
-    showSlides(slideIndex[no] += n, no);
-    
-  }
-  
-  setInterval(function(){
-    plusSlides(1,1)
-    plusSlides(1,0)
-  },3500)
-
-  function showSlides(n, no) {
-    var i;
-    var x = document.getElementsByClassName(slideId[no]);
-    if (n > x.length) {slideIndex[no] = 1}
-    if (n < 1) {slideIndex[no] = x.length}
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    x[slideIndex[no]-1].style.display = "block";
-  } 
-        
-  function toCheckout(){
-    console.log(localStorage.getItem("__cart"));
-    if(localStorage.getItem("__cart")!= null){
-      document.getElementById("toCheckoutlink").click();    
-    } else{
-    }
-  }
-
-  function scroll(){
-    return(window.scrollY);
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {      
-    plusSlides(1,1)
-    plusSlides(1,0)
-    
-    if(localStorage.getItem("__cart")!= null){
-      document.getElementById("cart-button").style.display = "inline-block";
-    }
-    
-  var cart = (cartLS.list());
-  var amount =0;
-  for(i =0;i<cart.length;i++){
-    amount+= cart[i].quantity;
-  }
-
-  var text = ('(' +amount+')');
-  document.getElementById("cart-text").innerHTML = text;
-  
-        }, false);
-
-      document.addEventListener('scroll', function(){
-        if(scroll()>916){
-          document.getElementById("cart-container").style.color = "black";
-        }else{          
-          document.getElementById("cart-container").style.color ="white"  ;
-        }
-
-      });
-
-  </script>
-
-
-
-
-
-
-  <div class="foot">
-    <!--footer stuff-->
-    <div class="item5">
-      <hr />
-      <a href="https://www.instagram.com/btrylclothing/" class="link" target="_blank">
-        <h5 class="inline">
-          instagram
-        </h5>
-      </a>
-      <p class="inline">
-        &nbsp; | &nbsp;
-      </p>
-      </a>
-      <a class="link" href="mailto:btrylclothing@hotmail.com">
-        <h5 class="inline">
-          mail
-        </h5>
-      </a>
-      <a class="link">
+                            <button class="buy-btn-white" onclick="onBtnClick('T-Shirt Black')">
+                                <a class="btn-text-black">Add to cart</a>
+                            </button>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
         <br />
-        <h5 class="inline">
-          copyright Betrayal TM &nbsp;| &nbsp; <a href="https://instagram.com/ned_de_simon" class="link"> Made by
-            Simon</a>
-        </h5>
-      </a>
-    </div>
-  </div>
+        <br />
 
+        <a style="display: none;" href="orders.html" id="toOrders"></a>
 
-</body>
+        <script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
+        <script type="text/javascript">
+            function onBtnClick(product) {
+                document.getElementById("cart-button").style.display = "inline-block";
+                if (product == "T-Shirt White") {
+                    var amount = document.getElementById("amount-white").value;
+                } else {
+                    var amount = document.getElementById("amount-black").value;
+                }
+                for (i = 0; i < amount; i++) {
+                    if (product == "T-Shirt Black") {
+                        if (cartLS.exists(1)) {
+                            cartLS.quantity(1, 1);
+                        } else {
+                            cartLS.add({
+                                id: 1,
+                                name: product,
+                                price: 37,
+                            });
+                            localStorage.setItem("size-T-Shirt Black", document.getElementById("size2").value);
+                        }
+                    }
 
+                    if (product == "T-Shirt White") {
+                        if (cartLS.exists(2)) {
+                            cartLS.quantity(2, 1);
+                        } else {
+                            cartLS.add({
+                                id: 2,
+                                name: product,
+                                price: 37,
+                            });
+
+                            localStorage.setItem("size-T-Shirt White", document.getElementById("size1").value);
+                        }
+                    }
+                }
+
+                var cart = cartLS.list();
+                var amount = 0;
+                for (i = 0; i < cart.length; i++) {
+                    amount += cart[i].quantity;
+                }
+
+                localStorage.setItem("cart", JSON.stringify(cartLS.list()));
+
+                var text = "(" + amount + ")";
+                document.getElementById("cart-text").innerHTML = text;
+
+                if (amount >= 20) {
+                    document.getElementById("sec-to-hide1").style.display = "none";
+                    document.getElementById("sec-to-hide2").style.display = "none";
+                }
+            }
+
+            var slideIndex = [1, 1];
+            var slideId = ["slide-black", "slide-white"];
+
+            function plusSlides(n, no) {
+                showSlides((slideIndex[no] += n), no);
+            }
+
+            setInterval(function () {
+                plusSlides(1, 1);
+                plusSlides(1, 0);
+            }, 3500);
+
+            function showSlides(n, no) {
+                var i;
+                var x = document.getElementsByClassName(slideId[no]);
+                if (n > x.length) {
+                    slideIndex[no] = 1;
+                }
+                if (n < 1) {
+                    slideIndex[no] = x.length;
+                }
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex[no] - 1].style.display = "block";
+            }
+
+            function toCheckout() {
+                console.log(localStorage.getItem("__cart"));
+                if (localStorage.getItem("__cart") != null) {
+                    document.getElementById("toCheckoutlink").click();
+                } else {
+                }
+            }
+
+            document.addEventListener(
+                "DOMContentLoaded",
+                function () {
+                    plusSlides(1, 1);
+                    plusSlides(1, 0);
+
+                    if (localStorage.getItem("__cart") != null) {
+                        document.getElementById("cart-button").style.display = "inline-block";
+                    }
+
+                    var cart = cartLS.list();
+                    var amount = 0;
+                    for (i = 0; i < cart.length; i++) {
+                        amount += cart[i].quantity;
+                    }
+
+                    var text = "(" + amount + ")";
+                    document.getElementById("cart-text").innerHTML = text;
+
+                    if (amount >= 20) {
+                        document.getElementById("sec-to-hide1").style.display = "none";
+                        document.getElementById("sec-to-hide2").style.display = "none";
+                    }
+                },
+                false
+            );
+        </script>
+
+        <div class="foot">
+            <!--footer stuff-->
+            <div class="item5">
+                <hr />
+                <a href="https://www.instagram.com/btrylclothing/" class="link" target="_blank">
+                    <h5 class="inline">
+                        instagram
+                    </h5>
+                </a>
+                <p class="inline">
+                    &nbsp; | &nbsp;
+                </p>
+                <a class="link" href="mailto:btrylclothing@hotmail.com">
+                    <h5 class="inline">
+                        mail
+                    </h5>
+                </a>
+                <a class="link">
+                    <br />
+                    <h5 class="inline">copyright Betrayal TM &nbsp;| &nbsp; <a href="https://instagram.com/ned_de_simon" class="link"> Made by Simon</a></h5>
+                </a>
+            </div>
+        </div>
+    </body>
 </html>

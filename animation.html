@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 
 <html>
+    <head>
+        <title>Betrayal by Michele</title>
+        <link rel="stylesheet" href="style/style.css" />
+        <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
+        <meta charset="utf-8" />
+        <meta name="description" content="Betrayal by Michel Biondi" />
+        <meta name="keywords" content="Betrayal" />
+        <meta name="author" content="Michele Biondi & Simon Kappeler" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta lang="en" />
+    </head>
 
-<head>
-    <title>Betrayal by Michele</title>
-    <link rel="stylesheet" href="style/style.css" />
-    <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
-    <meta charset="utf-8" />
-    <meta name="description" content="Betrayal by Michel Biondi" />
-    <meta name="keywords" content="Betrayal" />
-    <meta name="author" content="Michele Biondi & Simon Kappeler" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta lang="en" />
+    <body>
+        <div class="gif-wrapper">
+            <img src="imgs/animated-logo.gif" alt="animation woosh" class="loading-gif" />
+        </div>
 
-</head>
+        <a href="succesful.html" target="_self" style="display: none;" id="gif"></a>
 
-<body>
-
-    <div class="gif-wrapper">
-        <img src="imgs/animated-logo.gif" alt="animation woosh" class="loading-gif">
-    </div>
-
-
-
-    
-    <a href="succesful.html" target="_self" style="display: none;" id="gif"></a>
-
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function () {
-            setTimeout(() => { document.getElementById("gif").click(); }, 5200);
-        }, false);
-    </script>
-
-</body>
-
+        <script type="text/javascript">
+            document.addEventListener(
+                "DOMContentLoaded",
+                function () {
+                    setTimeout(() => {
+                        document.getElementById("gif").click();
+                    }, 5200);
+                },
+                false
+            );
+        </script>
+    </body>
 </html>

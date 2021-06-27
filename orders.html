@@ -36,23 +36,23 @@
 
             <div class="main">
                 <form class="form" action="not_found.html">
-                    <label for="vorname">Name: </label><br>
+                    <label for="vorname">Vorname: </label><br>
                     <input type="text" id="vorname" required> <br>
 
-                    <label for="name">Lastname: </label><br>
+                    <label for="name">Nachname: </label><br>
                     <input type="text" id="name" required>
 
 
-                    <label for="adresse">Adress: </label>
+                    <label for="adresse">Adresse: (Strasse + Nummer) </label>
                     <input type="text" id="adresse" required> <br>
 
-                    <label for="plz">Town and Zipcode </label>
+                    <label for="plz">Postleitzahl und Ort</label>
                     <input type="text" id="plz" required> <br>
 
                     <label for="nummer">Smartphone Nr.: </label>
                     <input type="text" id="nummer" required><br>
 
-                    <label for="insta">Instagram (if you've got one) </label>
+                    <label for="insta">Instagram (wenn du eines hast) </label>
                     <input type="text" id="insta">                  
                     <br><br>
 
@@ -69,7 +69,7 @@
 
                     <label for="toggle" ><input class="input" type="checkbox" id="toggle" />
                         <div class="toggle-wrapper"onclick="toggle()"><span class="selector"></span></div>
-                        <p class="notification">I can pay with twint: <span class="selected"></span></p>
+                        <p class="notification">Ich kann mit Twint bezahlen: <span class="selected"></span></p>
                     </label>
 
 
@@ -83,7 +83,7 @@
             <p class="error" id="error">
 
             </p>
-            <br><br><button class="submit-btn" onclick="sendMsg()">Continue to payment</button><br> <br>
+            <br><br><button class="submit-btn" onclick="sendMsg()">Weiter zur Bezahlung</button><br> <br>
             <br><br><br>
 
             <div class="foot">
@@ -98,7 +98,6 @@
                     <p class="inline">
                         &nbsp; | &nbsp;
                     </p>
-                    </a>
                     <a class="link" href="mailto:btrylclothing@hotmail.com">
                         <h5 class="inline">
                             mail
@@ -117,9 +116,8 @@
             </div>
             <a href="payment.html" target="_self" style="display: none;" id="hidden-btn"></a>
             <p style="display: none" id="hidden-text">False</p>
-        </body>
 
-        
+
 <script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
         <script>
             function sendMsg() {
@@ -150,13 +148,13 @@
 
                 // Check if a field is empty
                 if (!vornameVal || !nameVal || !nummerVal || !adresseVal || !plzVal ) {
-                    document.getElementById('error').textContent = "You forgot something!";
+                    document.getElementById('error').textContent = "Fülle bitte alles aus!";
                 }
                 else if (!reg.test(nummerVal)) {
-                    document.getElementById('error').textContent = "Enter a correct phone number pls. Example: 011 111 11 11";
+                    document.getElementById('error').textContent = "Gib bitte eine korrekte Nummer ein. Beispiel: 011 111 11 11";
                 }
                 else if (!adresReg.test(plzVal)) {
-                    document.getElementById('error').textContent = "Please enter a Town with the Form '1111 Townname'";
+                    document.getElementById('error').textContent = "Gib bitte eine korrekte Adresse ein. Beispiel: '1111 Townname'";
                 }
                 else {
 
@@ -207,13 +205,13 @@
             function toggle(){
                 var rn = document.getElementById("hidden-text");
                 if(rn.innerHTML=="True"){
-                    rn.innerHTML = "False"
+                    rn.innerHTML = "Nein"
                 } else{                    
-                    rn.innerHTML = "True"
+                    rn.innerHTML = "Ja"
                 }
             }
         </script>
 
-
+        </body>       
 
 </html>

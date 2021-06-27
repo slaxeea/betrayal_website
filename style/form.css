@@ -1,41 +1,42 @@
-.main{
-    border: 1px solid white;
-    display: flex;
-    justify-content: center;
-    margin: 8px 0;
-    padding: 20px 20px;
+.main {
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  margin: 8px 0;
+  padding: 20px 20px;
 }
 
-form{
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
-    display: block;
+form {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  display: block;
 }
 
-input{
-    border-radius: 4px;
-    padding: 6px 10px;
-    margin: 8px 0;
-    border: 2px solid rgba(255, 255, 255, 0.699);
-    color: white;
-    background-color: black ;
+input {
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin: 8px 0;
+  border: 2px solid rgba(255, 255, 255, 0.699);
+  color: white;
+  background-color: black;
 
-    width: 100%;
+  width: 100%;
 }
 
-#produkt, #size{
-    border-radius: 4px;
-    padding: 6px 10px;
-    margin: 8px 0;
-    border: 2px solid rgba(255, 255, 255, 0.699);
-    background-color: black;
-    color: white;
-    width: 105%;
+#produkt,
+#size {
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin: 8px 0;
+  border: 2px solid rgba(255, 255, 255, 0.699);
+  background-color: black;
+  color: white;
+  width: 105%;
 }
 
-.submit-btn{
-display: block;
+.submit-btn {
+  display: block;
   border: 1px solid #dbdbdbbd;
   background-color: rgba(0, 0, 0, 0);
   color: #dbdbdbbd;
@@ -60,16 +61,12 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.error{
-    color: red;
-    font-size: medium;
-    text-align: center;
+.error {
+  color: red;
+  font-size: medium;
+  text-align: center;
 }
-
-
-
-

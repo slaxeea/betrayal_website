@@ -52,12 +52,20 @@
 
             </div>
             <br><br>
-            <a href="orders.html" style="display: block; text-align:center;">
+            <div style="	text-align: center;	">
+            <a href="orders.html" style="display: inline; text-align:center; margin-left: auto;">
             <button class="button">
                 Pay
             </button>
             </a>
             
+            <a href="collections.html" style="display: none; text-align:center;" id="toCollections" >
+            </a>
+              <button class="button" onclick="deletecart()">
+                  Delete cart
+              </button>
+            </div>
+
         </body>
         <script src="./dist/cart/dist/cart-localstorage.min.js" ></script>
         <script type="text/javascript">
@@ -79,7 +87,7 @@
           <button type="button" class="btn btn-block btn-sm btn-outline-primary"
             onClick="cartLS.quantity(${item.id},-1)">-</button>
         </td>
-        <td class="text-right">$${item.price}</td>
+        <td class="text-right">${item.price} CHF</td>
         <td class="text-right"><Button class="btn btn-primary" onClick="cartLS.remove(${item.id})">Delete</Button></td>
       </tr>`).join("")
 
@@ -93,7 +101,11 @@ cartLS.onChange(renderCart)
 
         }, false);
 
-
+function deletecart(){
+cartLS.destroy();
+localStorage.clear();
+document.getElementById("toCollections").click();
+}
 
           </script>
         
