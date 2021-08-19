@@ -114,7 +114,7 @@
                     </a>
                 </div>
             </div>
-            <a href="payment.html" target="_self" style="display: none;" id="hidden-btn"></a>
+            <a href="payment_noTwint.html" target="_self" style="display: none;" id="hidden-btn"></a>
             <p style="display: none" id="hidden-text">False</p>
 
 
@@ -158,10 +158,6 @@
                 }
                 else {
 
-                    if(canTwint!=="True"){
-                        document.getElementById("hidden-btn").setAttribute('href', 'payment_noTwint.html');
-                    }
-
                     // var win = window.open(`https://wa.me/${410795657025}?text=aaaaaa`, '_blank');
                     var request = new XMLHttpRequest();
                     request.open("POST", token);
@@ -204,10 +200,13 @@
 
             function toggle(){
                 var rn = document.getElementById("hidden-text");
+                var btn = document.getElementById("hidden-btn");
                 if(rn.innerHTML=="True"){
-                    rn.innerHTML = "Nein"
+                    rn.innerHTML = "False"
+                    btn.setAttribute("href", "payment_noTwint.html");
                 } else{                    
-                    rn.innerHTML = "Ja"
+                    rn.innerHTML = "True"
+                    btn.setAttribute("href", "payment.html");
                 }
             }
         </script>

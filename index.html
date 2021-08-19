@@ -5,12 +5,14 @@
         <title>Betrayal by Michele</title>
         <link rel="stylesheet" href="style/style.css" />
         <link rel="stylesheet" href="style/new_navbtn.css" />
+        <link rel="stylesheet" href="style/consent.css" />
         <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
         <meta charset="utf-8" />
         <meta name="description" content="Betrayal by Michel Biondi" />
         <meta name="keywords" content="Betrayal" />
         <meta name="author" content="Michele Biondi & Simon Kappeler" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="google-site-verification" content="QliLbtN8w7fxaI14aAQzPrrQ1FxJmV3lNuFg-HJkTjg" />
         <meta lang="en" />
     </head>
 
@@ -57,12 +59,31 @@
                             mail
                         </h5>
                     </a>
+                    
+                    <p class="inline">
+                        &nbsp; | &nbsp;
+                    </p>
+
+                    <a href="tos.html" class="link">
+                        <h5 class="inline">
+                            terms of service
+                        </h5>
+                    </a>
+                    
                     <a class="link">
                         <br />
                         <h5 class="inline">copyright Betrayal TM &nbsp;| &nbsp; <a href="https://instagram.com/ned_de_simon" class="link"> Made by Simon</a></h5>
                     </a>
                 </div>
             </div>
+        </div>
+
+        <div class="consent" id="consent">
+            <h4 class="consent-text" id="consent-text">
+                Accept cookies pls?
+            </h4>
+            <button class="consent-btn" onclick="tos('Yes')" id="consent-btn1">Yes</button>
+            <button class="consent-btn" onclick="tos('No')" id="consent-btn2">No</button>
         </div>
 
         <script type="text/javascript">
@@ -72,9 +93,35 @@
                     // document.getElementById("head").style.display = 'none';
 
                     document.getElementById("arrow").style.display = "none";
+
+                    var tos = localStorage.getItem("tos");
+                    if(tos=="Yes"){
+                        document.getElementById("consent").style.display="none";
+                    }
                 },
                 false
             );
+
+            function tos(agreed){
+                if(agreed=="Yes"){
+                    changeText("Thanks, appreciate it!");
+                }else{                
+                    changeText("Ok, we will only run necessary cookies"); 
+                }
+
+                localStorage.setItem("tos", agreed);
+            }
+
+            function changeText(newt){
+                    console.log("Agreed");
+                    text = document.getElementById("consent-text");
+                    div = document.getElementById("consent");
+                    text.innerHTML =newt;
+                    document.getElementById("consent-btn1").style.display="none";
+                    document.getElementById("consent-btn2").style.display="none";
+                    text.addEventListener("click", function(){ consent.style.display ="none"})
+            }
+
         </script>
 
         <script type="text/javascript">
