@@ -1,56 +1,47 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Betrayal by Michele</title>
-        <link rel="stylesheet" href="style/style.css" />
-        <link rel="stylesheet" href="style/new_navbtn.css" />
-        <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
-        <meta charset="utf-8" />
-        <meta name="description" content="Betrayal by Michel Biondi" />
-        <meta name="keywords" content="Betrayal" />
-        <meta name="author" content="Michele Biondi & Simon Kappeler" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta lang="en" />
-    </head>
 
-    <body>
-        <div class="head">
-            <div class="grid-container">
-                <div class="head" id="head">
-                    <ul class="nav-bar">
-                        <li><a href="about.html" class="btn-flip" id="a">about</a></li>
-                        <li><a href="collections.html" class="btn-flip">collections</a></li>
-                        <li><a href="index.html" class="btn-flip">home</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+<head>
+    <title>Betrayal by Michele</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/new_navbtn.css" />
+    <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
+    <meta charset="utf-8" />
+    <meta name="description" content="Betrayal by Michel Biondi" />
+    <meta name="keywords" content="Betrayal" />
+    <meta name="author" content="Michele Biondi & Simon Kappeler" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta lang="en" />
+</head>
 
+<body>
+
+    <br />
+    <div class="main" style="text-align: center;">
+        <img class="qrcode" src="imgs/qr-code.png" alt="qrcode" />
+
+        <h3 style="text-align: center;">Here is a Qr-Code for Twint, please pay your orders over this link</h3>
         <br />
-        <div class="main" style="text-align: center;">
-            <img class="qrcode" src="imgs/qr-code.png" alt="qrcode" />
+        <h3 style="text-align: center;" id="total"></h3>
 
-            <h3 style="text-align: center;">Here is a Qr-Code for Twint, please pay your orders over this link</h3>
-            <br />
-            <h3 style="text-align: center;" id="total"></h3>
+        <a href="animation.html">
+            <button class="button">
+                Continue
+            </button>
+        </a>
+    </div>
 
-            <a href="animation.html">
-                <button class="button">
-                    Continue
-                </button>
-            </a>
-        </div>
+    <script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
+    <script type="text/javascript">
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+                document.getElementById("total").innerHTML = "Your order costs " + cartLS.total() + " CHF";
+            },
+            false
+        );
+    </script>
+</body>
 
-        <script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
-        <script type="text/javascript">
-            document.addEventListener(
-                "DOMContentLoaded",
-                function () {
-                    document.getElementById("total").innerHTML = "Your order costs: " + cartLS.total() + " CHF";
-                },
-                false
-            );
-        </script>
-    </body>
 </html>

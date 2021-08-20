@@ -3,112 +3,167 @@
 <html>
 
 <head>
-    <title>Betrayal by Michele</title>
-    <link rel="stylesheet" href="style/style.css" />
-    <link rel="stylesheet" href="style/new_navbtn.css" />
-    <link rel="stylesheet" href="style/checkbox.css" />
-    <link rel="stylesheet" href="style/form.css" />
-    <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
-    <meta charset="utf-8" />
-    <meta name="description" content="Betrayal by Michel Biondi" />
-    <meta name="keywords" content="Betrayal" />
-    <meta name="author" content="Michele Biondi & Simon Kappeler" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta lang="en" />
+  <title>Betrayal by Michele</title>
+  <link rel="stylesheet" href="style/style.css" />
+  <link rel="stylesheet" href="style/navbtn.css" />
+  <link rel="stylesheet" href="style/checkout.css" />
+  <link rel="stylesheet" href="style/checkbox.css" />
+  <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
+
+  <meta charset="utf-8" />
+  <meta name="description" content="Betrayal by Michel Biondi" />
+  <meta name="keywords" content="Betrayal" />
+  <meta name="author" content="Michele Biondi & Simon Kappeler" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta lang="en" />
 
 </head>
 
 <body>
-    <div class="head">
+  <div class="head">
 
-        <body>
-            <div class="grid-container">
-                <div class="head" id="head">
-                    <ul class="nav-bar">
-                        <li><a href="about.html" class="btn-flip" id="a">about</a></li>
-                        <li><a href="collections.html" class="btn-flip">collections</a></li>
-                        <li><a href="index.html" class="btn-flip">home</a></li>
-                    </ul>
-                </div>
-            </div>
+    <body>
+      <div class="grid-container">
 
+        <ul class="nav-bar">
+            <li><a href="index.html" class="nav-btn">home</a></li>
+            <li><a href="collection_2020.html" class="nav-btn">winter collection 2021</a></li>
+            <li><a href="collection_2021.html" class="nav-btn">summer start-up</a></li><br>
 
-
-            <div class="main">
-
-                <table class="table">
-                    <tbody class="cart" id="cart">
-                    </tbody>
-                    <tfoot>
-                      <td></td> 
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td class="text-right">Total: <strong class="total" id="total"></strong></td>
-                      <td></td>
-                    </tfoot>
-                  </table>
-
-            </div>
-            <br><br>
-            <div style="	text-align: center;	">
-            <a href="orders.html" style="display: inline; text-align:center; margin-left: auto;">
-            <button class="button">
-                Pay
-            </button>
-            </a>
+            <li><a href="about.html" class="nav-btn" id="a">about</a></li><br>
             
-            <a href="collections.html" style="display: none; text-align:center;" id="toCollections" >
-            </a>
-              <button class="button" onclick="deletecart()">
-                  Delete cart
-              </button>
-            </div>
+            <li><a href="tos.html" class="nav-btn less-padding" id="a">agb</a></li>
+            <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
+        </ul>
 
-        </body>
-        <script src="./dist/cart/dist/cart-localstorage.min.js" ></script>
-        <script type="text/javascript">
-        
-        function renderCart(items) {
-  const cart = document.querySelector(".cart")
-  const total = document.querySelector(".total")
+    </div>
 
-  cart.innerHTML = items.map((item) => `
-      <tr>
-        <td>#${item.id}</td>
+    <div class="head">
+        <img src="imgs/BtrylMainLogo.png" class="mini-logo" alt="logo" onclick="dropdown()">
+
+        <ul class="mobile-nav-bar" id="mobile-nav-bar">
+            <li><a href="index.html" class="nav-btn">home</a></li>
+            <li><a href="collection_2020.html" class="nav-btn">winter collection 2021</a></li>
+            <li><a href="collection_2021.html" class="nav-btn">summer start-up</a></li><br>
+            <li><a href="about.html" class="nav-btn" id="a">about</a></li><br>
+            
+            <li><a href="tos.html" class="nav-btn less-padding " id="a">agb</a></li>
+            <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
+        </ul>
+
+        <div class="cart-container">
+            <img src="imgs/cart.png" alt="cart" class="cart-icon">
+        </div>
+    </div>
+
+      <div class="main">
+
+        <table class="table">
+          <tbody class="cart" id="cart">
+          </tbody>
+          <tfoot>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-right">Total: <strong class="total" id="total"></strong></td>
+            <td></td>
+          </tfoot>
+        </table>
+
+      </div>
+      <br><br>
+      <div style="	text-align: center;	">
+        <a href="orders.html" style="display: inline; text-align:center; margin-left: auto;">
+          <button class="button">
+            Pay
+          </button>
+        </a>
+
+        <button class="button" onclick="deletecart()">
+          Delete cart
+        </button>
+
+        <a href="product.html" style="display: inline; text-align:center; margin-left: auto;">
+          <button class="button">
+            Back to Product
+          </button>
+        </a>
+      </div>
+
+    </body>
+    <script src="./dist/cart/dist/cart-localstorage.min.js"></script>
+    <script type="text/javascript">
+
+      function renderCart(items) {
+        const cart = document.querySelector(".cart");
+        const total = document.querySelector(".total");
+
+        cart.innerHTML = items.map((item) => `
+      <tr class="tr">
         <td>${item.name}</td>
-        <td>${item.quantity}</td>
         <td style="width: 60px;"> 
           <button type="button" class="btn btn-block btn-sm btn-outline-primary"
-            onClick="cartLS.quantity(${item.id},1)">+</button>
-        </td>
-        <td style="width: 60px;"> 
-          <button type="button" class="btn btn-block btn-sm btn-outline-primary"
-            onClick="cartLS.quantity(${item.id},-1)">-</button>
-        </td>
-        <td class="text-right">${item.price} CHF</td>
-        <td class="text-right"><Button class="btn btn-primary" onClick="cartLS.remove(${item.id})">Delete</Button></td>
-      </tr>`).join("")
+          onClick="buttonClick(${item.id},1)">+</button>
+          </td>
+          <td class="quantity">
+            ${item.quantity}</td>
+            <td style="width: 60px;"> 
+              <button type="button" class="btn btn-block btn-sm btn-outline-primary"
+              onClick="buttonClick(${item.id},-1)">-</button>
+              </td>
+              <td class="text-right">${item.price} CHF</td>
+              <td class="text-right"><Button class="btn btn-primary" onClick="removeItem(${item.id})">Remove Item</Button></td>
+              
+              <img src="imgs/products/${item.name}1.png" class="thumbnail alt="img">
+              </tr>`).join("")
 
-  total.innerHTML =  cartLS.total() + " CHF"
-}
-cartLS.onChange(renderCart)
+        total.innerHTML = cartLS.total() + " CHF"
+      }
 
- renderCart(cartLS.list())
- document.addEventListener('DOMContentLoaded', function () {
-                     renderCart(cartLS.list());
+      function buttonClick(id, change) {
+        cartLS.quantity(id, change);
+        renderCart(cartLS.list());
+      }
+      function removeItem(id) {
+        cartLS.remove(id);
+        renderCart(cartLS.list());
+      }
+      renderCart(cartLS.list())
+      document.addEventListener('DOMContentLoaded', function () {
+        renderCart(cartLS.list());
 
-        }, false);
+      }, false);
 
-function deletecart(){
-cartLS.destroy();
-localStorage.clear();
-document.getElementById("toCollections").click();
-}
+      function deletecart() {
+        cartLS.destroy();
+        localStorage.clear();
+        renderCart(cartLS.list());
+      };
 
-          </script>
-        
-        
+      $(".cart-icon").click(function () {
+        window.location.href = "checkout.html";
+      });
+
+      function dropdown() {
+        height = window.innerWidth;
+        if (height < 1000) {
+          var x = document.getElementById("mobile-nav-bar");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+      }
+
+
+    </script>
+
+
 
 </html>

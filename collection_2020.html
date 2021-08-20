@@ -6,12 +6,16 @@
     <title>Betrayal by Michele</title>
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/navbtn.css" />
+    <link rel="stylesheet" href="style/collections.css" />
     <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
     <meta charset="utf-8" />
     <meta name="description" content="Betrayal by Michel Biondi" />
     <meta name="keywords" content="Betrayal" />
     <meta name="author" content="Michele Biondi & Simon Kappeler" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
     <meta name="google-site-verification" content="QliLbtN8w7fxaI14aAQzPrrQ1FxJmV3lNuFg-HJkTjg" />
     <meta lang="en" />
 </head>
@@ -50,47 +54,40 @@
         </div>
     </div>
 
-    <div class="main">
-        <div class="section1" id="section1">
-            <img class="logo" src="imgs/products/Cream_Hoodie2.PNG" alt="logo" />
-            <br />
+
+    <div class="main collection">
+        <div class="product">
+            <img src="imgs/shirt_black.png" alt="product image" class="tshirt-img">
+            <p class="product-title">Tshirt Black</p>
+            <p class="product-desc">40 CHF</p>
         </div>
 
-        <div class="section2" id="section2">
-            <br />
-            <h3 class="desc" style="text-align: center;">Premium clothes by Michele Biondi</h3>
-            <br />
+
+        <div class="product">
+            <img src="imgs/shirt_black.png" alt="product image" class="tshirt-img">
+            <p class="product-title">Tshirt Black</p>
+            <p class="product-desc">40 CHF</p>
         </div>
-    </div>
-
-    <div class="foot-container">
-        <a class="a" href="https://instagram.com/btrylclothing">
-            <img src="imgs/instagram.png" alt="instagram" class="foot-link">
-        </a>
-        <a class="a" href="https://github.com/slaxeea">
-            <img src="imgs/github.png" alt="github" class="foot-link">
-        </a>
-        <a class="a" href="mailto:btrylclothing@hotmail.com">
-            <img src="imgs/email.png" alt="mail" class="foot-link">
-        </a>
-    </div>
 
     </div>
 
-    <script type="text/javascript">
+    <script>
+        $(".cart-icon").click(function () {
+          window.location.href = "checkout.html";
+        });
+
         function dropdown() {
-            height = window.innerWidth;
-            if (height < 1000) {
-                var x = document.getElementById("mobile-nav-bar");
-                if (x.style.display === "block") {
-                    x.style.display = "none";
-                } else {
-                    x.style.display = "block";
-                }
-            }
+        height = window.innerWidth;
+        if (height < 1000) {
+          var x = document.getElementById("mobile-nav-bar");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
         }
-    </script>
-
+      }
+      </script>
 </body>
 
 </html>

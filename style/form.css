@@ -1,15 +1,26 @@
 .main {
-  border: 1px solid white;
+  border: 1px solid rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  margin: 8px 0;
+  margin-left: 20%;
+  padding: 20px 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .main{
+  border: 1px solid rgb(0, 0, 0);
   display: flex;
   justify-content: center;
   margin: 8px 0;
   padding: 20px 20px;
+  }
 }
 
 form {
   display: inline-block;
-  background-color: rgba(0, 0, 0, 0);
-  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  color: black;
   display: block;
 }
 
@@ -17,11 +28,13 @@ input {
   border-radius: 4px;
   padding: 6px 10px;
   margin: 8px 0;
-  border: 2px solid rgba(255, 255, 255, 0.699);
-  color: white;
-  background-color: black;
+  border: 2px solid rgba(0, 0, 0, 0.699);
+  color: black;
+  background-color: white;
 
   width: 100%;
+
+  max-width: 95%;
 }
 
 #produkt,
@@ -37,9 +50,7 @@ input {
 
 .submit-btn {
   display: block;
-  border: 1px solid #dbdbdbbd;
-  background-color: rgba(0, 0, 0, 0);
-  color: #dbdbdbbd;
+  border: 1px solid #2e2e2ebd;
   padding: 16px 32px;
   text-align: center;
   text-decoration: none;
@@ -69,4 +80,10 @@ input[type="number"] {
   color: red;
   font-size: medium;
   text-align: center;
+}
+
+.total{
+  display: block;
+  text-align: left;
+  margin-right: 10%;
 }
