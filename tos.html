@@ -1,44 +1,238 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Betrayal by Michele</title>
-        <link rel="stylesheet" href="style/style.css" />
-        <link rel="stylesheet" href="style/new_navbtn.css" />
-        <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
-        <meta charset="utf-8" />
-        <meta name="description" content="Betrayal by Michel Biondi" />
-        <meta name="keywords" content="Betrayal" />
-        <meta name="author" content="Michele Biondi & Simon Kappeler" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta lang="en" />
-    </head>
 
-    <body>
-        <div class="head">
-            <div class="grid-container">
-                <div class="head" id="head">
-                    <ul class="nav-bar">
-                        <li><a href="about.html" class="btn-flip" id="a">about</a></li>
-                        <li><a href="collections.html" class="btn-flip">collections</a></li>
-                        <li><a href="index.html" class="btn-flip">home</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+<head>
+    <title>Betrayal by Michele</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/navbtn.css" />
+    <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
+    <meta charset="utf-8" />
+    <meta name="description" content="Betrayal by Michel Biondi" />
+    <meta name="keywords" content="Betrayal" />
+    <meta name="author" content="Michele Biondi & Simon Kappeler" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta lang="en" />
+</head>
 
-        <div class="main">
-            <img class="logo" src="imgs/logo_white.png" alt="logo" style="width: 20%;"/>
-            <h2 style="text-align: center;">Terms of Service at Betrayal Clothing TM</h2>
-            <br>
-                <div style=" margin: 0 20%" >
-                    <h3>Preamble</h3>
-                    <h3>By visiting this website you agree to our terms and conditions. We hold our freedom to change them without notice.</h3><br>
-                    <h3>1. Third Party Cookies</h3>
-                    <h3>We use third party cookies for analytical purposes only.</h3><br>
-                    <h3>2. Refunds</h3>
-                    <h3>We cannot grant a refund. Every purchase over this website is binding.</h3>
-                </div>
+<body>
+    
+    <div class="grid-container">
+
+        <ul class="nav-bar">
+            <li><a href="index.html" class="nav-btn">home</a></li>
+            <li><a href="collection_2020.html" class="nav-btn">winter collection 2021</a></li>
+            <li><a href="collection_2021.html" class="nav-btn">summer start-up</a></li><br>
+
+            <li><a href="about.html" class="nav-btn" id="a">about</a></li><br>
+            
+            <li><a href="tos.html" class="nav-btn less-padding" id="a">agb</a></li>
+            <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
+        </ul>
+
+    </div>
+
+    <div class="head">
+
+        <ul class="mobile-nav-bar" id="mobile-nav-bar">
+            <li><a href="index.html" class="nav-btn">home</a></li>
+            <li><a href="collection_2020.html" class="nav-btn">winter collection 2021</a></li>
+            <li><a href="collection_2021.html" class="nav-btn">summer start-up</a></li><br>
+            <li><a href="about.html" class="nav-btn" id="a">about</a></li><br>
+            
+            <li><a href="tos.html" class="nav-btn less-padding " id="a">agb</a></li>
+            <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
+        </ul>
+
+        <div class="cart-container">
+            <img src="imgs/cart.png" alt="cart" class="cart-icon">
         </div>
-    </body>
+    </div>
+
+
+    <div class="main">
+        <img class="logo" src="imgs/BtrylMainLogo.png" alt="logo" style="width: 15%;" onclick="dropdown()" />
+        <h2 style="text-align: center;">AGB Betrayal Clothing</h2>
+        <br>
+        <div style=" margin: 0 20%">
+            <p>Geltungsbereich</p>
+            <p>Diese Geschäftsbedingungen gelten für alle Käufe bei Betrayal Clothing <a
+                    href="impressum.html">Impressum</a>, die von
+                Privatkunden getätigt werden.
+                Privatkunden in diesem Sinne sind Personen mit Wohnsitz und Lieferadresse in der Schweiz, soweit die von
+                ihnen bestellten Waren weder ihrer gewerblichen noch ihrer selbstständigen beruflichen Tätigkeit
+                zugerechnet werden können.
+            </p><br>
+            <p>Vertragsabschluss</p>
+            <p>Die Präsentation unserer Waren und der Einräumung der Möglichkeit zur Bestellung stellt unsererseits ein
+                konkretes Angebot zum Abschluss eines Kaufvertrages dar.
+                Durch Ihre Bestellung nehmen Sie das Angebot an und der Kaufvertrag ist zustande gekommen.
+                Hierüber erhalten Sie eine Bestellbestätigung per E-Mail an die von Ihnen angegebene E-Mail-Adresse oder
+                eine SMS/WhatsApp Nachricht auf die von Ihnen angegebene Nummer.
+
+            </p><br>
+            <p>Preise und Versandkosten</p>
+            <p>Die ausgezeichneten Preise sind Endpreise inkl. Umsatzsteuer. Es gilt der Betrag, der jeweils zum
+                Zeitpunkt der verbindlichen Bestellung ausgewiesen ist. Es kommen keine Versandkosten dazu. Die
+                regelmäßigen Kosten der Rücksendung, die im Falle einer Rückgabe der Ware durch Sie in Ausübung kommt
+                tragen wir nicht dazu dabei. </p><br>
+            <p>Zahlung</p>
+            <p>
+                Die Bezahlung erfolgt bei Lieferung mittels <br>
+                Twint; Lastschrift; Bezahlung bei Abholung; Konto Überweisung
+            </p><br>
+            <p>Versand</p>
+            <p>Gratis Versand oder im Preis mit ein berechnet.
+                Versand erfolgt durch die Post Schweiz oder von einer unseren Mitarbeiter persönlich.
+                Versand kann bis zu 2 Monaten dauern, habe in Erinnerung das dies Hochqualitative Schweizer Designer
+                Kleidungen sind, das warten Lohnt sich.
+                Versand erfolgt momentan nur in der Schweiz.
+            </p><br>
+            <p>Zahlungsverzug</p>
+            <p>Kommen Sie in Zahlungsverzug, so ist Betrayal Clothing berechtigt, Verzugszinsen in Höhe von 5
+                Prozentpunkten über dem von der Schweizerischen Nationalbank für den Zeitpunkt der Bestellung bekannt
+                gegebenen Basiszinssatz p.a. zu fordern. Falls Betrayal Clothing ein höherer Verzugsschaden nachweisbar
+                entstanden ist, ist Betrayal Clothing berechtigt, diesen geltend zu machen.</p><br>
+            <p>Zurückbehaltungsrecht</p>
+            <p>
+                Zur Ausübung eines Zurückbehaltungsrechts ist der Kunde nur insoweit befugt, als sein Gegenanspruch auf
+                demselben Vertragsverhältnis beruht.
+            </p><br>
+            <p>Lieferung</p>
+            <p>(1) Die Lieferung erfolgt an die vom Kunden angegebene Lieferanschrift, innerhalb von der Schweiz.
+                <br>(2) Macht höhere Gewalt (Naturkatastrophen, Krieg, Bürgerkrieg, Terroranschlag) die Lieferung oder
+                eine sonstige Leistung dauerhaft unmöglich, ist eine Leistungspflicht von Betrayal Clothing
+                ausgeschlossen. Bereits gezahlte Beträge werden von Betrayal Clothing unverzüglich erstattet.
+                <br>(3) Betrayal Clothing kann außerdem die Leistung verweigern, soweit diese einen Aufwand erfordert,
+                der unter Beachtung des Inhalts des Kaufvertrages und der Gebote von Treu und Glauben in einem groben
+                Missverhältnis zu dem Interesse des Kunden an der Erfüllung des Kaufvertrages steht. Bereits gezahlte
+                Beträge werden von Betrayal Clothing unverzüglich erstattet.
+            </p><br>
+            <p>Günstige Versandart bei Rücksendung</p>
+            <p>(1) Bitte verwenden Sie bei der Rücksendung der Ware und des Zubehörs nach Möglichkeit die
+                Originalverpackung, auch wenn diese durch eine Öffnung zur Funktionsprüfung beschädigt sein sollte.
+                <br>(2) Bitte verwenden Sie zur Rücksendung den der Warenlieferung beigefügten, vollständig frankierten
+                und adressierten Rücksendeaufkleber. Es handelt sich dabei um die einfachste und kostengünstigste
+                Versandmöglichkeit. Sie trifft keine Verpflichtung zur Verwendung dieses Rücksendeverfahrens. Wenn Sie
+                allerdings eine unnötig teure Versandart wählen, können Sie unter Umständen verpflichtet sein, die
+                gegenüber einer günstigen Versandart erhöhten Kosten an uns zu zahlen.
+            </p><br>
+            <p>Eigentumsvorbehalt</p>
+            <p>
+                Bis zur vollständigen Begleichung aller gegen den Kunden bestehender Ansprüche aus dem Kaufvertrag
+                bleibt die gelieferte Ware im Eigentum von Betrayal Clothing. Solange dieser Eigentumsvorbehalt besteht,
+                darf der Kunde die Ware weder weiterveräußern noch über die Ware verfügen; insbesondere darf der Kunde
+                Dritten vertraglich keine Nutzung an der Ware einräumen.
+            </p><br>
+            <p>Mängelrechte</p>
+            <p>(1) Ein bereits bei der Lieferung mangelhaftes Produkt (Gewährleistungsfall) wird Betrayal Clothing nach
+                Wahl des Kunden auf Kosten von Betrayal Clothing durch ein mangelfreies ersetzen.
+                Der Kunde wird darauf hingewiesen, dass kein Gewährleistungsfall vorliegt, wenn das Produkt bei
+                Gefahrübergang die vereinbarte Beschaffenheit hatte. Ein Gewährleistungsfall liegt insbesondere in
+                folgenden Fällen nicht vor:<br>
+                a) bei Schäden, die beim Kunden durch Missbrauch oder unsachgemäßen Gebrauch entstanden sind,
+                <br>b) bei Schäden, die dadurch entstanden sind, dass die Produkte beim Kunden schädlichen äußeren
+                Einflüssen ausgesetzt worden sind (insbesondere extremen Temperaturen, Feuchtigkeit, außergewöhnlicher
+                physikalischer oder elektrischer Beanspruchung, Spannungsschwankungen, Blitzschlag, statischer
+                Elektrizität, Feuer).
+                <br>(1) Erfordert die vom Kunden gewünschte Art der Nacherfüllung (Ersatzlieferung oder Reparatur) einen
+                Aufwand, der in Anbetracht des Produktpreises unter Beachtung des Vertragsinhaltes und der Gebote von
+                Treu und Glauben in einem groben Missverhältnis zu dem Leistungsinteresse des Kunden steht – wobei
+                insbesondere der Wert des Kaufgegenstandes im mangelfreien Zustand, die Bedeutung des Mangels und die
+                Frage zu berücksichtigen sind, ob auf die andere Art der Nacherfüllung ohne erhebliche Nachteile für den
+                Kunden zurückgegriffen werden kann – beschränkt sich der Anspruch des Kunden auf die jeweils andere Art
+                der Nacherfüllung. Das Recht von Betrayal Clothing, auch diese andere Art der Nacherfüllung unter der
+                vorgenannten Voraussetzung zu verweigern, bleibt unberührt.
+                <br>(2) Sowohl für den Fall der Reparatur als auch für den Fall der Ersatzlieferung ist der Kunde
+                verpflichtet, das Produkt auf Kosten von Betrayal Clothing unter Angabe der Auftragsnummer an die von
+                ihr angegebene Rücksendeadresse einzusenden. Vor der Einsendung hat der Kunde von ihm eingefügte
+                Gegenstände aus dem Produkt zu entfernen. Betrayal Clothing ist nicht verpflichtet, das Produkt auf den
+                Einbau solcher Gegenstände zu untersuchen. Für den Verlust solcher Gegenstände haftet Betrayal Clothing
+                nicht, es sei denn, es war bei Rücknahme des Produktes für Betrayal Clothing ohne Weiteres erkennbar,
+                dass ein solcher Gegenstand in das Produkt eingefügt worden ist (in diesem Fall informiert Betrayal
+                Clothing den Kunden und hält den Gegenstand für den Kunden zur Abholung bereit; der Kunde trägt die
+                dabei entstehenden Kosten). Der Kunde hat zudem, bevor er ein Produkt zur Reparatur oder zum Austausch
+                einsendet, gegebenenfalls separate Sicherungskopien der auf dem Produkt befindlichen Systemsoftware, der
+                Anwendungen und aller Daten auf einem separaten Datenträger zu erstellen und alle Passwörter zu
+                deaktivieren. Eine Haftung für Datenverlust wird nicht übernommen. Ebenso obliegt es dem Kunden, nachdem
+                ihm das reparierte Produkt oder das Ersatzprodukt zurückgesandt worden ist, die Software und Daten zu
+                installieren und die Passwörter zu reaktivieren.
+                <br>(3) Sendet der Kunde die Ware ein, um ein Austauschprodukt zu bekommen, richtet sich die Rückgewähr
+                des
+                mangelhaften Produktes nach folgender Maßgabe: Sofern der Kunde die Ware zwischen Lieferung und
+                Rücksendung in mangelfreiem Zustand benutzen konnte, hat dieser den Wert der von ihm gezogenen Nutzungen
+                zu erstatten. Für einen nicht durch den Mangel eingetretenen Untergang oder die weitere Verschlechterung
+                der Ware sowie für die nicht durch den Mangel eingetretene Unmöglichkeit der Herausgabe der Ware im
+                Zeitraum zwischen Lieferung der Ware und Rücksendung der Ware hat der Kunde Wertersatz zu leisten. Der
+                Kunde hat keinen Wertersatz für die durch den bestimmungsgemäßen Gebrauch der Ware entstandene
+                Verschlechterung der Ware zu leisten. Die Pflicht zum Wertersatz entfällt für die Rücksendung eines
+                mangelhaften Produktes im Gewährleistungsfall ferner,
+                <br>a) wenn sich der zum Rücktritt berechtigende Mangel erst während der Verarbeitung oder Umgestaltung
+                gezeigt hat,
+                <br>b) wenn Betrayal Clothing die Verschlechterung oder den Untergang zu vertreten hat oder der Schaden
+                auch
+                bei Betrayal Clothing eingetreten wäre,
+                c) wenn die Verschlechterung oder der Untergang beim Kunden eingetreten ist, obwohl dieser diejenige
+                Sorgfalt beachtet hat, die er in eigenen Angelegenheiten anzuwenden pflegt.
+                <br>(6) Die Schadensersatzpflicht des Kunden bei einer vom Kunden zu vertretenden Verletzung der
+                Rücksendungspflicht richtet sich nach Maßgabe der gesetzlichen Bestimmungen.
+                <br>(7) Der Kunde kann nach seiner Wahl vom Vertrag zurücktreten oder den Kaufpreis mindern, wenn die
+                Reparatur oder Ersatzlieferung innerhalb einer angemessenen Frist nicht zu einem vertragsgerechten
+                Zustand des Produktes geführt hat.
+                <br>(8) Darüber hinaus können auch Ansprüche gegen den Hersteller im Rahmen einer von diesem
+                eingeräumten
+                Garantie bestehen, die sich nach den entsprechenden Garantiebedingungen richten.
+                <br>(9) Die gesetzliche Gewährleistung von Betrayal Clothing endet zwei Jahre ab Lieferung der Ware. Die
+                Frist beginnt mit dem Erhalt der Ware.
+            </p><br>
+            <p>Haftung</p>
+            <p>(1) Bei leichter Fahrlässigkeit haftet Betrayal Clothing nur bei der Verletzung vertragswesentlicher
+                Pflichten und beschränkt auf den vorhersehbaren Schaden. Diese Beschränkung gilt nicht bei der
+                Verletzung von Leben, Körper und Gesundheit. Für sonstige leicht fahrlässig durch einen Mangel des
+                Kaufgegenstandes verursachte Schäden haftet Betrayal Clothing nicht.
+                <br>(2) Unabhängig von einem Verschulden von Betrayal Clothing bleibt eine Haftung von Betrayal Clothing
+                bei arglistigem Verschweigen des Mangels oder aus der Übernahme einer Garantie unberührt. Die
+                Herstellergarantie ist eine Garantie des Herstellers und stellt keine Übernahme einer Garantie durch
+                Betrayal Clothing dar.
+                <br>(3) Betrayal Clothing ist auch für die während ihres Verzugs durch Zufall eintretende Unmöglichkeit
+                der Lieferung verantwortlich, es sei denn, dass der Schaden auch bei rechtzeitiger Lieferung eingetreten
+                wäre.
+                <br>(4) Ausgeschlossen ist die persönliche Haftung der gesetzlichen Vertreter, Erfüllungsgehilfen und
+                Betriebsangehörigen von Betrayal Clothing für von ihnen durch leichte Fahrlässigkeit verursachte
+                Schäden.
+            </p><br>
+            <p>Anwendbares Recht</p>
+            <p>Der zwischen Ihnen und Betrayal Clothing abgeschlossene Vertrag unterliegt ausschließlich dem Recht der
+                Schweizerischen Eidgenossenschaft unter ausdrücklichem Ausschluss des UN-Kaufrechts. Unberührt davon
+                bleiben die zwingenden Bestimmungen des Staates, in dem Sie Ihren gewöhnlichen Aufenthalt haben.</p><br>
+            <p>Gerichtsstand</p>
+            <p>Sofern Sie entgegen Ihren Angaben bei der Bestellung keinen Wohnsitz in der Schweiz haben oder nach
+                Vertragsabschluss Ihren Wohnsitz ins Ausland verlegen oder Ihr Wohnsitz zum Zeitpunkt der Klageerhebung
+                nicht bekannt ist, ist Gerichtsstand für alle Streitigkeiten aus und im Zusammenhang mit dem
+                Vertragsverhältnis (Hoster: „https://neocities.org; Besitzer Onlineshop: Michele Biondi, Simon Kappeler,
+                Jeannine Steinacher)</p><br>
+            <p>Schlussbestimmungen</p>
+            <p>(1) Sollten einzelne Bestimmungen dieses Vertrages ganz oder teilweise unwirksam oder nichtig sein oder
+                werden, so wird dadurch die Wirksamkeit des Vertrages im Übrigen nicht berührt, insoweit ein
+                Vertragspartner hierdurch nicht unangemessen benachteiligt wird.
+                <br>(2) Änderungen oder Ergänzungen dieses Vertrages bedürfen der Schriftform.
+            </p>
+            <br><br>
+        </div>
+    </div>
+    <script>
+        function dropdown() {
+            height = window.innerWidth;
+            if (height < 1000) {
+                var x = document.getElementById("mobile-nav-bar");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+        }
+    </script>
+</body>
+
 </html>

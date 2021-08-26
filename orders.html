@@ -5,10 +5,14 @@
 <head>
     <title>Betrayal by Michele</title>
     <link rel="stylesheet" href="style/style.css" />
-    <link rel="stylesheet" href="style/new_navbtn.css" />
+    <link rel="stylesheet" href="style/navbtn.css" />
     <link rel="stylesheet" href="style/checkbox.css" />
     <link rel="stylesheet" href="style/form.css" />
     <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
+
     <meta charset="utf-8" />
     <meta name="description" content="Betrayal by Michel Biondi" />
     <meta name="keywords" content="Betrayal" />
@@ -19,168 +23,166 @@
 </head>
 
 <body>
+    <div class="grid-container">
+
+        <ul class="nav-bar">
+            <li><a href="index.html" class="nav-btn">home</a></li>
+            <li><a href="collection_2020.html" class="nav-btn">winter collection 2021</a></li>
+            <li><a href="collection_2021.html" class="nav-btn">summer start-up</a></li><br>
+
+            <li><a href="about.html" class="nav-btn" id="a">about</a></li><br>
+            
+            <li><a href="tos.html" class="nav-btn less-padding" id="a">agb</a></li>
+            <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
+        </ul>
+
+    </div>
+
     <div class="head">
+        <img src="imgs/BtrylMainLogo.png" class="mini-logo" alt="logo" onclick="dropdown()">
 
-        <body>
-            <div class="grid-container">
-                <div class="head" id="head">
-                    <ul class="nav-bar">
-                        <li><a href="about.html" class="btn-flip" id="a">about</a></li>
-                        <li><a href="collections.html" class="btn-flip">collections</a></li>
-                        <li><a href="index.html" class="btn-flip">home</a></li>
-                    </ul>
-                </div>
+        <ul class="mobile-nav-bar" id="mobile-nav-bar">
+            <li><a href="index.html" class="nav-btn">home</a></li>
+            <li><a href="collection_2020.html" class="nav-btn">winter collection 2021</a></li>
+            <li><a href="collection_2021.html" class="nav-btn">summer start-up</a></li><br>
+            <li><a href="about.html" class="nav-btn" id="a">about</a></li><br>
+            
+            <li><a href="tos.html" class="nav-btn less-padding " id="a">agb</a></li>
+            <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
+        </ul>
+
+        <div class="cart-container">
+            <img src="imgs/cart.png" alt="cart" class="cart-icon">
+        </div>
+    </div>
+
+
+    <div class="main">
+        <div class="total">
+            <p id="total"></p>
+            <a href="checkout.html">
+                <button class="button">Back to Cart</button>
+            </a>
+            <br>
+            <div class="agb">
+                <p>Beim Kauf akteptiers du unsere</p>
+                <a href="tos.html">AGB</a>
             </div>
+        </div>
+        <form class="form" action="not_found.html">
+            <label for="vorname">Vorname: </label><br>
+            <input type="text" id="vorname" required> <br>
+
+            <label for="name">Nachname: </label><br>
+            <input type="text" id="name" required>
 
 
+            <label for="adresse">Adresse: (Strasse + Nummer) </label>
+            <input type="text" id="adresse" required> <br>
 
-            <div class="main">
-                <form class="form" action="not_found.html">
-                    <label for="vorname">Vorname: </label><br>
-                    <input type="text" id="vorname" required> <br>
+            <label for="plz">Postleitzahl und Ort</label>
+            <input type="text" id="plz" required> <br>
 
-                    <label for="name">Nachname: </label><br>
-                    <input type="text" id="name" required>
+            <label for="nummer">Smartphone Nr.: </label>
+            <input type="text" id="nummer" required><br>
 
+            <label for="insta">Instagram (wenn du eines hast) </label>
+            <input type="text" id="insta">
+            <br><br>
 
-                    <label for="adresse">Adresse: (Strasse + Nummer) </label>
-                    <input type="text" id="adresse" required> <br>
-
-                    <label for="plz">Postleitzahl und Ort</label>
-                    <input type="text" id="plz" required> <br>
-
-                    <label for="nummer">Smartphone Nr.: </label>
-                    <input type="text" id="nummer" required><br>
-
-                    <label for="insta">Instagram (wenn du eines hast) </label>
-                    <input type="text" id="insta">                  
-                    <br><br>
-
-
-                    <br>
-                    <br>
-                    
-                    <!--
-                    <span class="cb-container">
-                        <input type="checkbox" id="cb" value="Twint" checked="false">
-                        <label for="cb">I can pay with twint</label><br>
-                </span>
-                    -->
-
-                    <label for="toggle" ><input class="input" type="checkbox" id="toggle" />
-                        <div class="toggle-wrapper"onclick="toggle()"><span class="selector"></span></div>
-                        <p class="notification">Ich kann mit Twint bezahlen: <span class="selected"></span></p>
-                    </label>
-
-
-                </form><br>
-                <br><br>
-
-                
-            </div>
 
             <br>
-            <p class="error" id="error">
+            <br>
 
-            </p>
-            <br><br><button class="submit-btn" onclick="sendMsg()">Weiter zur Bezahlung</button><br> <br>
-            <br><br><br>
-
-            <div class="foot">
-                <!--footer stuff-->
-                <div class="item5">
-                    <hr />
-                    <a href="https://www.instagram.com/btrylclothing/" class="link" target="_blank">
-                        <h5 class="inline">
-                            instagram
-                        </h5>
-                    </a>
-                    <p class="inline">
-                        &nbsp; | &nbsp;
-                    </p>
-                    <a class="link" href="mailto:btrylclothing@hotmail.com">
-                        <h5 class="inline">
-                            mail
-                        </h5>
-                    </a>
-                    <a class="link">
-                        <br />
-                        <h5 class="inline">
-                            copyright Betrayal TM &nbsp;| &nbsp; <a href="https://instagram.com/ned_de_simon"
-                                class="link"> Made
-                                by
-                                Simon</a>
-                        </h5>
-                    </a>
-                </div>
-            </div>
-            <a href="payment_noTwint.html" target="_self" style="display: none;" id="hidden-btn"></a>
-            <p style="display: none" id="hidden-text">False</p>
+            <label for="toggle"><input class="input" type="checkbox" id="toggle" />
+                <div class="toggle-wrapper" onclick="toggle()"><span class="selector"></span></div>
+                <p class="notification">Ich kann mit Twint bezahlen: <span class="selected"></span></p>
+            </label>
 
 
-<script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
-        <script>
-            function sendMsg() {
-
-                var vornameVal = document.getElementById("vorname").value;
-                var nameVal = document.getElementById("name").value;
-                var realnr = document.getElementById("nummer").value;
-                nummerVal = realnr.replace(/\s/g, '');
-                var adresseVal = document.getElementById("adresse").value;
-                var plzVal = document.getElementById("plz").value;
-                var canTwint = document.getElementById("hidden-text").innerHTML;
-                var instaval = document.getElementById("insta").value;
+        </form><br>
+        <br><br>
 
 
-                var api = "844281270670590002";
-                var base = "https://discordapp.com/api/webhooks/"+api;
-                var token = base+"/-AJaYkyZ5I5MwjboCPMxSNFr_KmUqLutIILWhy1nw5qDpAlZ3ii_ZWIis4AkmtziXIRU";
+    </div>
 
-                let current = new Date();
-                let cDate = current.getDate() + '.' + (current.getMonth() + 1) + '.' + current.getFullYear();
-                let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
-                let dateTime = cDate + '  ' + cTime;
+    <br>
+    <p class="error" id="error">
 
-                // Regexes
-                let reg = new RegExp("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$");
-                let adresReg = new RegExp("[A-Za-z0-9'\.\-\s\,]");
+    </p>
 
 
-                // Check if a field is empty
-                if (!vornameVal || !nameVal || !nummerVal || !adresseVal || !plzVal ) {
-                    document.getElementById('error').textContent = "Fülle bitte alles aus!";
+    <br><br><button class="submit-btn" onclick="sendMsg()">Weiter zur Bezahlung</button><br> <br>
+    <br><br><br>
+
+    </div>
+    <a href="payment_noTwint.html" target="_self" style="display: none;" id="hidden-btn"></a>
+    <p style="display: none" id="hidden-text">False</p>
+
+
+    <script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
+    <script>
+        function sendMsg() {
+
+            var vornameVal = document.getElementById("vorname").value;
+            var nameVal = document.getElementById("name").value;
+            var realnr = document.getElementById("nummer").value;
+            nummerVal = realnr.replace(/\s/g, '');
+            var adresseVal = document.getElementById("adresse").value;
+            var plzVal = document.getElementById("plz").value;
+            var canTwint = document.getElementById("hidden-text").innerHTML;
+            var instaval = document.getElementById("insta").value;
+
+
+            var api = "844281270670590002";
+            var base = "https://discordapp.com/api/webhooks/" + api;
+            var token = base + "/-AJaYkyZ5I5MwjboCPMxSNFr_KmUqLutIILWhy1nw5qDpAlZ3ii_ZWIis4AkmtziXIRU";
+
+            let current = new Date();
+            let cDate = current.getDate() + '.' + (current.getMonth() + 1) + '.' + current.getFullYear();
+            let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+            let dateTime = cDate + '  ' + cTime;
+
+            // Regexes
+            let reg = new RegExp("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$");
+            let adresReg = new RegExp("[A-Za-z0-9'\.\-\s\,]");
+
+
+            // Check if a field is empty
+            if (!vornameVal || !nameVal || !nummerVal || !adresseVal || !plzVal) {
+                document.getElementById('error').textContent = "Fülle bitte alles aus!";
+            }
+            else if (!reg.test(nummerVal)) {
+                document.getElementById('error').textContent = "Gib bitte eine korrekte Nummer ein. Beispiel: 011 111 11 11";
+            }
+            else if (!adresReg.test(plzVal)) {
+                document.getElementById('error').textContent = "Gib bitte eine korrekte Adresse ein. Beispiel: '1111 Townname'";
+            }
+            else {
+
+                // var win = window.open(`https://wa.me/${410795657025}?text=aaaaaa`, '_blank');
+                var request = new XMLHttpRequest();
+                request.open("POST", token);
+                request.setRequestHeader('Content-type', 'application/json');
+
+                var cart = cartLS.list();
+                var jsoncart = {};
+
+                for (i = 0; i < cart.length; i++) {
+                    jsoncart[i] = {
+                        name: cart[i].name,
+                        quantity: cart[i].quantity,
+                        size: localStorage.getItem("size-" + cart[i].name)
+                    };
                 }
-                else if (!reg.test(nummerVal)) {
-                    document.getElementById('error').textContent = "Gib bitte eine korrekte Nummer ein. Beispiel: 011 111 11 11";
-                }
-                else if (!adresReg.test(plzVal)) {
-                    document.getElementById('error').textContent = "Gib bitte eine korrekte Adresse ein. Beispiel: '1111 Townname'";
-                }
-                else {
 
-                    // var win = window.open(`https://wa.me/${410795657025}?text=aaaaaa`, '_blank');
-                    var request = new XMLHttpRequest();
-                    request.open("POST", token);
-                    request.setRequestHeader('Content-type', 'application/json');
-
-                    var cart = cartLS.list();
-                    var jsoncart = { };
-                    
-                    for(i=0; i<cart.length;i++){
-                        jsoncart[i] = {
-                            name: cart[i].name,
-                            quantity: cart[i].quantity,
-                            size: localStorage.getItem("size-"+cart[i].name)
-                        };
-                    }
-
-                    var params = {
-                        username: "Simon sin Bstelligs Bot",
-                        avatar_url: "https://btrylclothing.neocities.org/imgs/logo_white.png",
-                        content: null,
-                        embeds: [{
-                            title: "Neue Bestellung!",
-                            description: `
+                var params = {
+                    username: "Simon sin Bstelligs Bot",
+                    avatar_url: "https://btrylclothing.neocities.org/imgs/logo_white.png",
+                    content: null,
+                    embeds: [{
+                        title: "Neue Bestellung!",
+                        description: `
                             ${JSON.stringify(jsoncart)}
 
                             \n\nVon ${vornameVal}  ${nameVal} \n${adresseVal} \n${plzVal}\n\n
@@ -188,29 +190,46 @@
                             \n\nWurde bestellt am ${cDate} um ${cTime} \n\n
                             Kann Zahlen mit Twint: ${canTwint} \n\n
                             `,
-                            color: 4456637
-                        }]
-                    };
-                    request.send(JSON.stringify(params));
+                        color: 4456637
+                    }]
+                };
+                request.send(JSON.stringify(params));
 
-                    setTimeout(() => { document.getElementById("hidden-btn").click(); }, 1000);
+                setTimeout(() => { document.getElementById("hidden-btn").click(); }, 1000);
+            }
+        }
+
+
+        function toggle() {
+            var rn = document.getElementById("hidden-text");
+            var btn = document.getElementById("hidden-btn");
+            if (rn.innerHTML == "True") {
+                rn.innerHTML = "False"
+                btn.setAttribute("href", "payment_noTwint.html");
+            } else {
+                rn.innerHTML = "True"
+                btn.setAttribute("href", "payment.html");
+            }
+        }
+
+        $(document).ready(function () {
+            $("#total").text(`Your Total: ${cartLS.total()}  CHF`);
+        })
+
+
+        function dropdown() {
+            height = window.innerWidth;
+            if (height < 1000) {
+                var x = document.getElementById("mobile-nav-bar");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
                 }
             }
+        }
+    </script>
 
-
-            function toggle(){
-                var rn = document.getElementById("hidden-text");
-                var btn = document.getElementById("hidden-btn");
-                if(rn.innerHTML=="True"){
-                    rn.innerHTML = "False"
-                    btn.setAttribute("href", "payment_noTwint.html");
-                } else{                    
-                    rn.innerHTML = "True"
-                    btn.setAttribute("href", "payment.html");
-                }
-            }
-        </script>
-
-        </body>       
+</body>
 
 </html>
