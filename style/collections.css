@@ -41,3 +41,34 @@
     border: 1px solid rgba(170, 170, 170, 0.596);
     
 }
+.tocart{
+    position:absolute;
+    right: 20%;
+    top: 30%
+  }
+  
+@media screen and (max-width: 1000px) {
+    .other-img-container{
+        position: inherit;
+        margin-left: 20%;
+    }.other-img{
+        width: 50px;
+        margin: 10px;
+        border: 1px solid rgba(170, 170, 170, 0.596);
+        
+    }
+    .tocart{
+        display: block;
+        position: inherit;
+        margin-left: 20%;
+      }
+      .tshirt-img-big{
+        max-width: 80%;
+        height: auto;
+        margin-left: 10%;
+        margin-right: auto;
+    }
+    
+      
+    
+}

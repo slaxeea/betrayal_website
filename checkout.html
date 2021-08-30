@@ -23,9 +23,6 @@
 </head>
 
 <body>
-  <div class="head">
-
-    <body>
       <div class="grid-container">
 
         <ul class="nav-bar">
@@ -75,25 +72,25 @@
           </tfoot>
         </table>
 
-      </div>
-      <br><br>
-      <div style="	text-align: center;	">
-        <a href="orders.html" style="display: inline; text-align:center; margin-left: auto;">
-          <button class="button">
-            Pay
-          </button>
-        </a>
-
-        <button class="button" onclick="deletecart()">
-          Delete cart
+        <br><br>
+        <div style="	text-align: center;	">
+          <a href="orders.html" style="display: inline; text-align:center; margin-left: auto;">
+            <button class="button">
+              Pay
+            </button>
+          </a>
+          
+          <button class="button" onclick="deletecart()">
+            Delete cart
         </button>
-
+        
         <a href="product.html" style="display: inline; text-align:center; margin-left: auto;">
           <button class="button">
             Back to Product
           </button>
         </a>
       </div>
+    </div>
 
     </body>
     <script src="./dist/cart/dist/cart-localstorage.min.js"></script>
@@ -119,7 +116,6 @@
               <td class="text-right">${item.price} CHF</td>
               <td class="text-right"><Button class="btn btn-primary" onClick="removeItem(${item.id})">Remove Item</Button></td>
               
-              <img src="imgs/products/${item.name}1.png" class="thumbnail alt="img">
               </tr>`).join("")
 
         total.innerHTML = cartLS.total() + " CHF"

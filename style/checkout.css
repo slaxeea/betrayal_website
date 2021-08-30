@@ -21,3 +21,14 @@ td {
 .thumbnail {
   height: 70px;
 }
+
+
+@media screen and (max-width: 1000px) {
+  .table {
+    position: relative;
+  }.main {
+    margin-left: 5%;
+    margin-top: 5%;
+    color: black;
+  }
+}
