@@ -1,5 +1,6 @@
 .table {
   position: relative;
+  margin-left: 20%;
 }
 
 .main {
@@ -26,6 +27,7 @@ td {
 @media screen and (max-width: 1000px) {
   .table {
     position: relative;
+    margin-left: 0%;
   }.main {
     margin-left: 5%;
     margin-top: 5%;

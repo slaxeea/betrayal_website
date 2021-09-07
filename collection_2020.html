@@ -57,14 +57,13 @@
 
     <div class="main collection">
         <div class="product">
-            <img src="imgs/shirt_black.png" alt="product image" class="tshirt-img">
+            <img src="imgs/products/Tshirt_Black1.png" alt="product image" class="tshirt-img">
             <p class="product-title">Tshirt Black</p>
             <p class="product-desc">40 CHF</p>
         </div>
-
-
+        
         <div class="product">
-            <img src="imgs/shirt_black.png" alt="product image" class="tshirt-img">
+            <img src="imgs/products/Tshirt_Black1.png" alt="product image" class="tshirt-img">
             <p class="product-title">Tshirt Black</p>
             <p class="product-desc">40 CHF</p>
         </div>
@@ -72,9 +71,13 @@
     </div>
 
     <script>
-        $(".cart-icon").click(function () {
-          window.location.href = "checkout.html";
+        $(".product").click(function () {
+            localStorage.setItem("product", $(this).find(".product-title").text().replace(" ", "_"));
+            window.location.href = "product.html";
         });
+        $(".cart-icon").click(function(){
+            window.location.href = "checkout.html";
+        })
 
         function dropdown() {
         height = window.innerWidth;
