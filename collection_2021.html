@@ -111,18 +111,6 @@
 </body>
 
 <script>
-    function dropdown() {
-        height = window.innerWidth;
-        if (height < 1000) {
-            var x = document.getElementById("mobile-nav-bar");
-            if (x.style.display === "block") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "block";
-            }
-        }
-    }
-
     $(".product").click(function () {
         localStorage.setItem("product", $(this).find(".product-title").text().replace(" ", "_"));
         window.location.href = "product.html";
