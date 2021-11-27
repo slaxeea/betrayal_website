@@ -1,6 +1,6 @@
 # Website for Betrayal TM
 
-Betrayal TM official Website
+Betrayal clothing official Website
 
 Website for a lil' startup
 
@@ -8,9 +8,6 @@ Made with big help from @livicy
 
 
 
-![logo_white](https://user-images.githubusercontent.com/54060284/113662984-75819c80-96a9-11eb-8d5e-d9d57a80d24a.png)
+![logo_white](https://media.discordapp.net/attachments/913871707964575755/914176802539307028/transp2.png?width=676&height=676)
 
 
-Last changes:
-08.09.2021
- 
