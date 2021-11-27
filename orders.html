@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style/navbtn.css" />
     <link rel="stylesheet" href="style/checkbox.css" />
     <link rel="stylesheet" href="style/form.css" />
-    <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="imgs/favicon.ico" />
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
@@ -32,7 +32,7 @@
             <li><a href="collection_2021.html" class="nav-btn">summer start-up</a></li><br>
 
             <li><a href="about.html" class="nav-btn" id="a">about</a></li><br>
-            
+
             <li><a href="tos.html" class="nav-btn less-padding" id="a">agb</a></li>
             <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
         </ul>
@@ -47,7 +47,7 @@
             <li><a href="collection_2020.html" class="nav-btn">winter collection 2021</a></li>
             <li><a href="collection_2021.html" class="nav-btn">summer start-up</a></li><br>
             <li><a href="about.html" class="nav-btn" id="a">about</a></li><br>
-            
+
             <li><a href="tos.html" class="nav-btn less-padding " id="a">agb</a></li>
             <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
         </ul>
@@ -131,9 +131,7 @@
             var instaval = document.getElementById("insta").value;
 
 
-            var api = "844281270670590002";
-            var base = "https://discordapp.com/api/webhooks/" + api;
-            var token = base + "/-AJaYkyZ5I5MwjboCPMxSNFr_KmUqLutIILWhy1nw5qDpAlZ3ii_ZWIis4AkmtziXIRU";
+            var token = "https://discord.com/api/webhooks/914294137812054076/kk2gQKAyU8Tdz0MJmTvi0hA7yPjnqeMPMVtB2XRzS2K3YgehAl8jxJmvpMPW7a9JVWaN";
 
             let current = new Date();
             let cDate = current.getDate() + '.' + (current.getMonth() + 1) + '.' + current.getFullYear();
@@ -156,16 +154,16 @@
                 document.getElementById('error').textContent = "Gib bitte eine korrekte Adresse ein. Beispiel: '1111 Townname'";
             }
             else {
-
-                // var win = window.open(`https://wa.me/${410795657025}?text=aaaaaa`, '_blank');
                 var request = new XMLHttpRequest();
                 request.open("POST", token);
                 request.setRequestHeader('Content-type', 'application/json');
 
                 var cart = cartLS.list();
                 var jsoncart = {};
+                var cartstring = "";
 
                 for (i = 0; i < cart.length; i++) {
+                    cartstring += `Nummer: ${i}, Produktname: ${cart[i].name}, Preis: ${cart[i].price}, Menge: ${cart[i].amount} \n`;
                     jsoncart[i] = {
                         name: cart[i].name,
                         quantity: cart[i].quantity,
@@ -174,25 +172,24 @@
                 }
 
                 var params = {
-                    username: "Simon sin Bstelligs Bot",
-                    avatar_url: "https://btrylclothing.neocities.org/imgs/logo_white.png",
+                    username: "Orders Bot",
+                    avatar_url: "https://media.discordapp.net/attachments/913871707964575755/914176802539307028/transp2.png?width=669&height=669",
                     content: null,
                     embeds: [{
                         title: "Neue Bestellung!",
                         description: `
-                            ${JSON.stringify(jsoncart)}
-
+                            ${cartstring}
                             \n\nVon ${vornameVal}  ${nameVal} \n${adresseVal} \n${plzVal}\n\n
                             Nummer: ${realnr} \n Insta: ${instaval}
                             \n\nWurde bestellt am ${cDate} um ${cTime} \n\n
-                            Kann Zahlen mit Twint: ${canTwint} \n\n
+                            ${canTwint=="Ja" ? "Zahlt mit Twint" : "Zahlt nicht mit Twint"} \n\n
                             `,
                         color: 4456637
                     }]
                 };
                 request.send(JSON.stringify(params));
 
-                setTimeout(() => { document.getElementById("hidden-btn").click(); }, 1000);
+                // setTimeout(() => { document.getElementById("hidden-btn").click(); }, 1000);
             }
         }
 
@@ -202,11 +199,9 @@
             var btn = document.getElementById("hidden-btn");
             if (rn.innerHTML == "Ja") {
                 rn.innerHTML = "Nein"
-                $(rn).text("Nein");
                 btn.setAttribute("href", "payment_noTwint.html");
             } else {
                 rn.innerHTML = "Ja"
-                $(rn).text("Ja");
                 btn.setAttribute("href", "payment.html");
             }
         }

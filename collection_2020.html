@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/navbtn.css" />
     <link rel="stylesheet" href="style/collections.css" />
-    <link rel="shortcut icon" type="image/png" href="imgs/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="imgs/favicon.ico" />
     <meta charset="utf-8" />
     <meta name="description" content="Betrayal by Michel Biondi" />
     <meta name="keywords" content="Betrayal" />
@@ -17,7 +17,7 @@
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <meta name="google-site-verification" content="QliLbtN8w7fxaI14aAQzPrrQ1FxJmV3lNuFg-HJkTjg" />
-    
+
     <script src="js/dropdown.js"></script>
     <meta lang="en" />
 </head>
@@ -31,7 +31,7 @@
             <li><a href="collection_2021.html" class="nav-btn">summer start-up</a></li><br>
 
             <li><a href="about.html" class="nav-btn" id="a">about</a></li><br>
-            
+
             <li><a href="tos.html" class="nav-btn less-padding" id="a">agb</a></li>
             <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
         </ul>
@@ -46,7 +46,7 @@
             <li><a href="collection_2020.html" class="nav-btn">winter collection 2021</a></li>
             <li><a href="collection_2021.html" class="nav-btn">summer start-up</a></li><br>
             <li><a href="about.html" class="nav-btn" id="a">about</a></li><br>
-            
+
             <li><a href="tos.html" class="nav-btn less-padding " id="a">agb</a></li>
             <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
         </ul>
@@ -57,30 +57,40 @@
     </div>
 
 
-    <div class="main collection">
-        <div class="product">
-            <img src="imgs/products/Tshirt_Black1.png" alt="product image" class="tshirt-img">
-            <p class="product-title">Tshirt Black</p>
-            <p class="product-desc">40 CHF</p>
-        </div>
-        
-        <div class="product">
-            <img src="imgs/products/Tshirt_Black1.png" alt="product image" class="tshirt-img">
-            <p class="product-title">Tshirt Black</p>
-            <p class="product-desc">40 CHF</p>
-        </div>
+    <div class="main collection" id="ankor">
+
 
     </div>
 
     <script>
-        $(".product").click(function () {
+        function onProductClick() {
             localStorage.setItem("product", $(this).find(".product-title").text().replace(" ", "_"));
             window.location.href = "product.html";
-        });
-        $(".cart-icon").click(function(){
+        };
+        $(".cart-icon").click(function () {
             window.location.href = "checkout.html";
-        })
-      </script>
+        });
+
+        $(document).ready(function () {
+            var a = $.ajax({
+                url: 'https://rzsrjvhfytcbeepyssgf.supabase.co/rest/v1/products',
+                type: 'GET',
+                headers: {
+                    apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzODAzMTM3MSwiZXhwIjoxOTUzNjA3MzcxfQ._lbG5Svb4bQbrsArAMRPq2mG3ERItCiiEZdaNsKFh8g',
+                }
+            })
+            a.then(function (res) {
+                res.forEach(element => {
+                    $("#ankor").append(`
+                    <div class="product" onclick="onProductClick()">
+                        <img src="imgs/products/${element.image_src}" alt="product image" class="tshirt-img">
+                        <p class="product-title">${element.name}</p>
+                        <p class="product-desc">${element.price} CHF</p>
+                    </div>`);
+                });
+            })
+        });
+    </script>
 </body>
 
 </html>
