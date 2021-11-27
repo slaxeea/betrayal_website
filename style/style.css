@@ -215,3 +215,9 @@ html {
   background-color: transparent;
   border: 1px solid black;
 }
+
+
+.coming-soon-img{
+  max-width: 90vw;
+  margin-top: 10%;
+}

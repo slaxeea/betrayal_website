@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Betrayal by Michele</title>
+    <title>btryl clothing</title>
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/navbtn.css" />
     <link rel="stylesheet" href="style/checkbox.css" />
@@ -62,7 +62,7 @@
             </a>
             <br>
             <div class="agb">
-                <p>Beim Kauf akteptiers du unsere</p>
+                <p>Beim Kauf akzeptierst du unsere</p>
                 <a href="tos.html">AGB</a>
             </div>
         </div>
@@ -200,11 +200,13 @@
         function toggle() {
             var rn = document.getElementById("hidden-text");
             var btn = document.getElementById("hidden-btn");
-            if (rn.innerHTML == "True") {
-                rn.innerHTML = "False"
+            if (rn.innerHTML == "Ja") {
+                rn.innerHTML = "Nein"
+                $(rn).text("Nein");
                 btn.setAttribute("href", "payment_noTwint.html");
             } else {
-                rn.innerHTML = "True"
+                rn.innerHTML = "Ja"
+                $(rn).text("Ja");
                 btn.setAttribute("href", "payment.html");
             }
         }

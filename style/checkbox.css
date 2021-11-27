@@ -12,7 +12,7 @@ label .input:checked + .toggle-wrapper > .selector {
   background-color: #3957ee;
 }
 label .input:checked ~ .notification > .selected:before {
-  content: "Yes";
+  content: "Ja";
 }
 label .toggle-wrapper {
   position: relative;
@@ -40,7 +40,7 @@ label .notification {
   width: 100%;
 }
 label .notification .selected:before {
-  content: "No";
+  content: "Nein";
   font-size: 18px;
   border-bottom: 2px solid;
 }
