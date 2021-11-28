@@ -15,10 +15,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.28.2/dist/umd/supabase.min.js"></script>
 
     <meta name="google-site-verification" content="QliLbtN8w7fxaI14aAQzPrrQ1FxJmV3lNuFg-HJkTjg" />
 
     <script src="js/dropdown.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/loginclick.js"></script>
     <meta lang="en" />
 </head>
 
@@ -34,15 +37,16 @@
 
             <li><a href="tos.html" class="nav-btn less-padding" id="a">agb</a></li>
             <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
-            
-            <li><p class="user" id="user"></p></li>
+
+            <li>
+                <p class="user" id="user"></p>
+            </li>
         </ul>
 
     </div>
 
     <div class="head">
         <div class="cart-container">
-            <p class="user" id="user"></p>
             <img src="./imgs/burger.png" class="burger-menu" alt="burger menu" onclick="dropdown()">
         </div>
 
@@ -54,13 +58,13 @@
 
             <li><a href="tos.html" class="nav-btn less-padding " id="a">agb</a></li>
             <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
-            
-            <li><p class="user" id="user"></p></li>
+
+            <li>
+                <p class="user" id="user"></p>
+            </li>
         </ul>
 
-        <div class="cart-container">
-            <img src="imgs/cart.png" alt="cart" class="cart-icon">
-        </div>
+
     </div>
 
 
@@ -70,32 +74,35 @@
     </div>
 
     <script>
+        $(document).ready(function () {
+            supabase = init();
+            addAuthClick();
+            getProducts();
+        })
+
+        function getProducts() {
+            let { data: orders, error } = supabase
+                .from('products')
+                .select('*')
+                .gt("stock", 0).then(function (res) {
+                    data = res.data;
+                    data.forEach(element => {
+                        $("#ankor").append(`
+                    <div class="product" onclick="onProductClick()">
+                        <img src="imgs/products/${element.image_src}" alt="product image" class="tshirt-img">
+                        <p class="product-title">${element.name}</p>
+                        <p class="product-desc">${element.price} CHF</p>
+                    </div>`);
+                    });
+                })
+
+        }
         function onProductClick() {
             localStorage.setItem("product", $(this).find(".product-title").text().replace(" ", "_"));
             window.location.href = "product.html";
         };
         $(".cart-icon").click(function () {
             window.location.href = "checkout.html";
-        });
-
-        $(document).ready(function () {
-            var a = $.ajax({
-                url: 'https://rzsrjvhfytcbeepyssgf.supabase.co/rest/v1/products',
-                type: 'GET',
-                headers: {
-                    apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzODAzMTM3MSwiZXhwIjoxOTUzNjA3MzcxfQ._lbG5Svb4bQbrsArAMRPq2mG3ERItCiiEZdaNsKFh8g',
-                }
-            })
-            a.then(function (res) {
-                res.forEach(element => {
-                    $("#ankor").append(`
-                    <div class="product" onclick="onProductClick()">
-                        <img src="imgs/products/${element.image_src}" alt="product image" class="tshirt-img">
-                        <p class="product-title">${element.name}</p>
-                        <p class="product-desc">${element.price} CHF</p>
-                    </div>`);
-                });
-            })
         });
     </script>
 </body>

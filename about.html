@@ -11,6 +11,7 @@
     crossorigin="anonymous"></script>
   <script src="js/auth.js"></script>
   <script src="js/loginclick.js"></script>
+  <script src="js/dropdown.js"></script>
   <link rel="shortcut icon" type="image/png" href="imgs/favicon.ico" />
   <meta charset="utf-8" />
   <meta name="description" content="Betrayal by Michel Biondi" />
@@ -61,7 +62,6 @@
     </ul>
   </div>
 
-
   <div class="main">
     <div class="section2" id="section2">
       <br>
@@ -83,6 +83,10 @@
   <script>
     $(".cart-icon").click(function () {
       window.location.href = "checkout.html";
+    }); 
+    $(document).ready(function () {
+      supabase = init();
+      addAuthClick();
     });
   </script>
 

@@ -43,5 +43,15 @@ function logout() {
 }
 
 function getCurrentUser() {
-  return supabase.auth.currentUser
+  return supabase.auth.currentUser;
+}
+
+function redirect() {
+  if (getCurrentUser() != null) {
+    if (localStorage.getItem("redirect"))
+      window.location.href = localStorage.getItem("redirect");
+    else {
+      window.location.href = "../index.html";
+    }
+  }
 }
