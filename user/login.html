@@ -79,32 +79,57 @@
     </p>
 
 
-    <button class="submit-btn" onclick="signup()">Signup</button><br> <br>
+    <button class="submit-btn" onclick="login()">login</button><br> <br>
 
 
     </div>
     <script>
-        function signup() {
+        $(document).ready(function () {
+            supabase = supabase.createClient('https://rzsrjvhfytcbeepyssgf.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzODAzMTM3MSwiZXhwIjoxOTUzNjA3MzcxfQ._lbG5Svb4bQbrsArAMRPq2mG3ERItCiiEZdaNsKFh8g');
 
+        });
+
+        function login() {
             var mail = document.getElementById("mail").value;
             var password = document.getElementById("password").value;
             var name = document.getElementById("name").value;
 
-            console.log(({ "email": mail, "password": password }));
             // Check if a field is empty
-            if (!mail || !name || !password) {
+            if (!mail || !password) {
                 document.getElementById('error').textContent = "Fülle bitte alles aus!";
             }
-            else {
-                var a = $.ajax({
-                    url: 'https://rzsrjvhfytcbeepyssgf.supabase.co/auth/v1/signup',
-                    type: 'POST',
-                    headers: {
-                        apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzODAzMTM3MSwiZXhwIjoxOTUzNjA3MzcxfQ._lbG5Svb4bQbrsArAMRPq2mG3ERItCiiEZdaNsKFh8g',
-                    },
-                    data: { "email": mail, "password": password }
-                })
+            if (true) {
+                loginWithEmailAndPassword(mail, password);
             }
+        }
+
+        function loginWithEmailAndPassword(mail, password) {
+            let { user, error } = supabase.auth.signIn({
+                email: mail,
+                password: password
+            }).then(
+                (user) => {
+                    console.log(user);
+                },
+                (error) => {
+                    console.log(error);
+                }
+            );
+        }
+
+
+        function createUserWithMailAndPassword(mail, password) {
+            let { user, error } = supabase.auth.signUp({
+                email: mail,
+                password: password
+            }).then(
+                (user) => {
+                    console.log(user);
+                },
+                (error) => {
+                    console.log(error);
+                }
+            );
         }
 
 
