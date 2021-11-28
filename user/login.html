@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>btryl clothing</title>
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/navbtn.css" />
+    <link rel="stylesheet" href="../style/form.css" />
+    <link rel="shortcut icon" type="image/png" href="../imgs/favicon.ico" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.28.2/dist/umd/supabase.min.js"></script>
+
+    <meta charset="utf-8" />
+    <meta name="description" content="Betrayal by Michel Biondi" />
+    <meta name="keywords" content="Betrayal" />
+    <meta name="author" content="Michele Biondi & Simon Kappeler" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/dropdown.js"></script>
+    <meta lang="en" />
+
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <ul class="nav-bar">
+            <li><a href="../index.html" class="nav-btn">home</a></li>
+            <li><a href="../collection_2020.html" class="nav-btn">winter collection 2021</a></li>
+            <li><a href="../collection_2021.html" class="nav-btn">summer start-up</a></li><br>
+
+            <li><a href="../about.html" class="nav-btn" id="a">about</a></li><br>
+
+            <li><a href="../tos.html" class="nav-btn less-padding" id="a">agb</a></li>
+            <li><a href="../impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
+        </ul>
+
+    </div>
+
+    <div class="head">
+        <img src="../imgs/BtrylMainLogo.png" class="mini-logo" alt="logo" onclick="dropdown()">
+
+        <ul class="mobile-nav-bar" id="mobile-nav-bar">
+            <li><a href="index.html" class="nav-btn">home</a></li>
+            <li><a href="collection_2020.html" class="nav-btn">winter collection 2021</a></li>
+            <li><a href="collection_2021.html" class="nav-btn">summer start-up</a></li><br>
+            <li><a href="about.html" class="nav-btn" id="a">about</a></li><br>
+
+            <li><a href="tos.html" class="nav-btn less-padding " id="a">agb</a></li>
+            <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
+        </ul>
+    </div>
+
+
+    <div class="main">
+        <form class="form" action="not_found.html">
+            <label for="vorname">Mail: </label><br>
+            <input type="email" id="mail" required> <br>
+
+            <label for="name">Passwort: </label><br>
+            <input type="password" id="password" required>
+
+
+            <label for="adresse">Name</label>
+            <input type="text" id="name" required> <br>
+
+            <br><br>
+
+        </form><br>
+        <br><br>
+
+
+    </div>
+
+    <br>
+    <p class="error" id="error">
+
+    </p>
+
+
+    <button class="submit-btn" onclick="signup()">Signup</button><br> <br>
+
+
+    </div>
+    <script>
+        function signup() {
+
+            var mail = document.getElementById("mail").value;
+            var password = document.getElementById("password").value;
+            var name = document.getElementById("name").value;
+
+            console.log(({ "email": mail, "password": password }));
+            // Check if a field is empty
+            if (!mail || !name || !password) {
+                document.getElementById('error').textContent = "Fülle bitte alles aus!";
+            }
+            else {
+                var a = $.ajax({
+                    url: 'https://rzsrjvhfytcbeepyssgf.supabase.co/auth/v1/signup',
+                    type: 'POST',
+                    headers: {
+                        apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzODAzMTM3MSwiZXhwIjoxOTUzNjA3MzcxfQ._lbG5Svb4bQbrsArAMRPq2mG3ERItCiiEZdaNsKFh8g',
+                    },
+                    data: { "email": mail, "password": password }
+                })
+            }
+        }
+
+
+        function toggle() {
+            var rn = document.getElementById("hidden-text");
+            var btn = document.getElementById("hidden-btn");
+            if (rn.innerHTML == "Ja") {
+                rn.innerHTML = "Nein"
+                btn.setAttribute("href", "payment_noTwint.html");
+            } else {
+                rn.innerHTML = "Ja"
+                btn.setAttribute("href", "payment.html");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

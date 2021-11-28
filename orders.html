@@ -12,6 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.28.2/dist/umd/supabase.min.js"></script>
 
     <meta charset="utf-8" />
     <meta name="description" content="Betrayal by Michel Biondi" />
@@ -179,16 +180,24 @@
                         title: "Neue Bestellung!",
                         description: `
                             ${cartstring}
-                            \n\nVon ${vornameVal}  ${nameVal} \n${adresseVal} \n${plzVal}\n\n
+                            \n\nVorname: ${vornameVal}  Nachname: ${nameVal} \n${adresseVal} \n${plzVal}\n\n
                             Nummer: ${realnr} \n Insta: ${instaval}
                             \n\nWurde bestellt am ${cDate} um ${cTime} \n\n
-                            ${canTwint=="Ja" ? "Zahlt mit Twint" : "Zahlt nicht mit Twint"} \n\n
+                            ${canTwint == "Ja" ? "Zahlt mit Twint" : "Zahlt nicht mit Twint"} \n\n
                             `,
                         color: 4456637
                     }]
                 };
-                request.send(JSON.stringify(params));
-
+                request.send(JSON.stringify(params));            
+                var userid = 23; var username ="simon"; var orderjson=JSON.stringify(jsoncart);
+                var a = $.ajax({
+                url: 'https://rzsrjvhfytcbeepyssgf.supabase.co/rest/v1/orders',
+                type: 'POST',
+                headers: {
+                    apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzODAzMTM3MSwiZXhwIjoxOTUzNjA3MzcxfQ._lbG5Svb4bQbrsArAMRPq2mG3ERItCiiEZdaNsKFh8g',
+                }, 
+                data: {"userid": userid, "username":username, "orderjson":orderjson, "datetime": dateTime}
+            })
                 // setTimeout(() => { document.getElementById("hidden-btn").click(); }, 1000);
             }
         }
