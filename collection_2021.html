@@ -9,9 +9,12 @@
     <link rel="stylesheet" href="style/collections.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.28.2/dist/umd/supabase.min.js"></script>
+
     <link rel="shortcut icon" type="image/png" href="imgs/favicon.ico" />
 
     <script src="js/dropdown.js"></script>
+    <script src="js/auth.js"></script>
     <meta charset="utf-8" />
     <meta name="description" content="Betrayal by Michel Biondi" />
     <meta name="keywords" content="Betrayal" />
@@ -40,7 +43,10 @@
         </div>
 
         <div class="head">
-            <img src="imgs/BtrylMainLogo.png" class="mini-logo" alt="logo" onclick="dropdown()">
+            <div class="cart-container">
+                <p class="user" id="user"></p>
+                <img src="./imgs/burger.png" class="burger-menu" alt="burger menu" onclick="dropdown()">
+            </div>
 
             <ul class="mobile-nav-bar" id="mobile-nav-bar">
                 <li><a href="index.html" class="nav-btn">home</a></li>
@@ -51,10 +57,6 @@
                 <li><a href="tos.html" class="nav-btn less-padding " id="a">agb</a></li>
                 <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
             </ul>
-
-            <div class="cart-container">
-                <img src="imgs/cart.png" alt="cart" class="cart-icon">
-            </div>
         </div>
     </div>
 
@@ -119,7 +121,33 @@
     });
     $(".cart-icon").click(function () {
         window.location.href = "checkout.html";
-    })
+    });
+    $(document).ready(function () {
+        supabase = init();
+        if (getCurrentUser()) {
+            $("#user").text("Logout")
+        } else {
+            $("#user").text("Login")
+        }
+        supabase.auth.onAuthStateChange((event, session) => {
+            if (event == "SIGNED_IN") {
+                $("#user").text("Logout")
+            }
+            else {
+                $("#user").text("Login")
+            }
+        })
+        $("#user").click(function () {
+            if (getCurrentUser()) {
+                logout();
+                $("#user").text("Login")
+            } else {
+                localStorage.setItem("redirect", window.location.href);
+                window.location.href = "./login.html"
+            }
+        })
+    });
+
 </script>
 
 </html>

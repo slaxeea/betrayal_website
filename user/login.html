@@ -86,7 +86,11 @@
     </div>
     <script>
         $(document).ready(function () {
-            supabase = init();
+            supabase = init();            
+            redirect();
+            supabase.auth.onAuthStateChange((event, session) => {
+               redirect();
+            })
         });
 
         function login() {
@@ -98,12 +102,23 @@
             if (!mail || !password) {
                 document.getElementById('error').textContent = "Fülle bitte alles aus!";
             }
-            if (true) {
+            else{
                 loginWithEmailAndPassword(mail, password);
+                setTimeout(400,redirect());
             }
         }
 
-        
+        function redirect() {
+            if (getCurrentUser().id) {
+                if (localStorage.getItem("redirect"))
+                    window.location.href = localStorage.getItem("redirect");
+                else {
+                    window.location.href = "../index.html";
+                }
+            } else {
+                document.getElementById('error').textContent = "Falsche E-Mail oder Passwort!";
+            }
+        }
 
         function toggle() {
             var rn = document.getElementById("hidden-text");
@@ -116,6 +131,8 @@
                 btn.setAttribute("href", "payment.html");
             }
         }
+
+
     </script>
 
 </body>

@@ -152,16 +152,28 @@ html {
 .cart-icon{
   width: 30px;
 }
-
 .cart-container{  
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-top: 20px;
+  display: table;
+  margin-top: 10px;
   margin-right: 5%;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  .burger-menu{
+    max-height: 30px;
+    max-width: 30px;
+    display: inline-block;
+  }
+}
+  
+.burger-menu{
+  display: none;
 }
 
+#user{
+  display: table-cell;
+  vertical-align: middle;
+}
 .head{
   position:sticky;
   top: 0;

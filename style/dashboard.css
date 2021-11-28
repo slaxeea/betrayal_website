@@ -1,4 +1,31 @@
 .order{
-    padding: 5px;
-    border-bottom: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+}
+
+.delete-order-button{
+    background-color: transparent;
+    border: 1px solid red;
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition-duration: 400ms;
+}
+
+.delete-order-button:hover{
+    background-color: rgba(255, 0, 0, 0.178);
+}
+
+.modify-order-button{
+    background-color: transparent;
+    border: 1px solid rgb(0, 177, 53);
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition-duration: 400ms;
+}
+
+.modify-order-button:hover{
+    background-color: rgba(0, 255, 76, 0.178);
 }

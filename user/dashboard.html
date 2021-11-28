@@ -42,7 +42,9 @@
 
     <div class="head">
         <img src="../imgs/BtrylMainLogo.png" class="mini-logo" alt="logo" onclick="dropdown()">
-
+        <div class="cart-container">
+            <p class="user" id="user"></p>
+        </div>
         <ul class="mobile-nav-bar" id="mobile-nav-bar">
             <li><a href="../index.html" class="nav-btn">home</a></li>
             <li><a href="../collection_2020.html" class="nav-btn">winter collection 2021</a></li>
@@ -54,12 +56,8 @@
         </ul>
     </div>
 
-
     <div class="main">
-
-
         <div id="ankor">
-            <h2>Orders</h2>
         </div>
 
 
@@ -68,14 +66,39 @@
     <script>
         $(document).ready(function () {
             supabase = init();
-            if(getCurrentUser()){
+            if (getCurrentUser()) {
                 getOrders();
-            } else{
+                $("#user").text("Logout")
+            } else {
                 $("#ankor").append("<h3>please login to see your dasboard</h3>");
+                $("#user").text("Login")
             }
+            supabase.auth.onAuthStateChange((event, session) => {
+                if (event == "SIGNED_IN") {
+                    getOrders();
+                    $("#user").text("Logout")
+                }
+                else {
+                    empty();
+                    $("#ankor").append("<h3>please login to see your dasboard</h3>");
+                    $("#user").text("Login")
+                }
+            })
+            $("#user").click(function () {
+                if (getCurrentUser()) {
+                    logout();
+                    empty();
+                    $("#ankor").append("<h3>please login to see your dasboard</h3>");
+                    $("#user").text("Login")
+                } else {
+                    localStorage.setItem("redirect", window.location.href);
+                    window.location.href = "./login.html"
+                }
+            })
         });
 
         function getOrders() {
+            empty();
             let { data: orders, error } = supabase
                 .from('orders')
                 .select('*')
@@ -84,9 +107,11 @@
                     Array.from(response.data).forEach(function (val, key) {
                         let order = JSON.parse(val.orderjson);
                         $("#ankor").append(`
-                            <div class="order">
-                                <h3>Order ${key+1}</h3>
+                            <div class="order" key="${key}">
+                                <h3>Order ${key + 1}</h3>
                                 <p>${getOrderFromJson(order)}</p>
+                                <button class="delete-order-button" onclick="deleteOrder(${val.id})">Bestellung löschen</button>
+                                <button class="modify-order-button" onclick="mofifyOrder(${val.id})">Bestellung ändern</button>
                             </div>
                         `);
                     })
@@ -96,6 +121,29 @@
                 });
         }
 
+        function deleteOrder(id) {
+            if (getCurrentUser()) {
+                const { data, error } = supabase
+                    .from('orders')
+                    .delete()
+                    .match({ id: id })
+                    .then(function (res) {
+                        console.log(res);
+                    })
+                setTimeout(200, getOrders());
+            } else {
+                alert("please login to delete orders");
+            }
+
+        }
+
+        function mofifyOrder(id) {
+            if (getCurrentUser()) {
+                console.log(`mofiyied order ${id}`);
+            } else {
+                alert("please login to modify orders");
+            }
+        }
         function getOrderFromJson(order) {
             let orderarray = new Map();
             let orderstring = "";
@@ -106,7 +154,7 @@
             console.log(orderarray);
 
             orderarray.forEach(function (val, key) {
-                orderstring+= `
+                orderstring += `
                     <div>
                         <p>Name: ${order[0].name}, Grösse: ${order[0].size}, Menge: ${order[0].quantity}</p>
                     </div>
@@ -115,6 +163,9 @@
             return orderstring;
         }
 
+        function empty() {
+            $("#ankor").empty();
+        }
 
         function toggle() {
             var rn = document.getElementById("hidden-text");

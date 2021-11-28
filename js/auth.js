@@ -45,4 +45,3 @@ function logout() {
 function getCurrentUser() {
   return supabase.auth.currentUser
 }
-
