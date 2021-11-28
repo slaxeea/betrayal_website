@@ -36,6 +36,8 @@
 
             <li><a href="../tos.html" class="nav-btn less-padding" id="a">agb</a></li>
             <li><a href="../impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
+            
+            <li><p class="user" id="user"></p></li>
         </ul>
 
     </div>
@@ -53,6 +55,8 @@
 
             <li><a href="../tos.html" class="nav-btn less-padding " id="a">agb</a></li>
             <li><a href="../impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
+            
+            <li><p class="user" id="user"></p></li>
         </ul>
     </div>
 
@@ -68,28 +72,28 @@
             supabase = init();
             if (getCurrentUser()) {
                 getOrders();
-                $("#user").text("Logout")
+                $(".user").text("Logout")
             } else {
                 $("#ankor").append("<h3>please login to see your dasboard</h3>");
-                $("#user").text("Login")
+                $(".user").text("Login")
             }
             supabase.auth.onAuthStateChange((event, session) => {
                 if (event == "SIGNED_IN") {
                     getOrders();
-                    $("#user").text("Logout")
+                    $(".user").text("Logout")
                 }
                 else {
                     empty();
                     $("#ankor").append("<h3>please login to see your dasboard</h3>");
-                    $("#user").text("Login")
+                    $(".user").text("Login")
                 }
             })
-            $("#user").click(function () {
+            $(".user").click(function () {
                 if (getCurrentUser()) {
                     logout();
                     empty();
                     $("#ankor").append("<h3>please login to see your dasboard</h3>");
-                    $("#user").text("Login")
+                    $(".user").text("Login")
                 } else {
                     localStorage.setItem("redirect", window.location.href);
                     window.location.href = "./login.html"
