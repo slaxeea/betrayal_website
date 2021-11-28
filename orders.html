@@ -120,6 +120,11 @@
 
     <script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
     <script>
+        $(document).ready(function () {
+            supabase = supabase.createClient('https://rzsrjvhfytcbeepyssgf.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzODAzMTM3MSwiZXhwIjoxOTUzNjA3MzcxfQ._lbG5Svb4bQbrsArAMRPq2mG3ERItCiiEZdaNsKFh8g');
+
+        });
+
         function sendMsg() {
 
             var vornameVal = document.getElementById("vorname").value;
@@ -188,17 +193,18 @@
                         color: 4456637
                     }]
                 };
-                request.send(JSON.stringify(params));            
-                var userid = 23; var username ="simon"; var orderjson=JSON.stringify(jsoncart);
-                var a = $.ajax({
-                url: 'https://rzsrjvhfytcbeepyssgf.supabase.co/rest/v1/orders',
-                type: 'POST',
-                headers: {
-                    apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzODAzMTM3MSwiZXhwIjoxOTUzNjA3MzcxfQ._lbG5Svb4bQbrsArAMRPq2mG3ERItCiiEZdaNsKFh8g',
-                }, 
-                data: {"userid": userid, "username":username, "orderjson":orderjson, "datetime": dateTime}
-            })
-                // setTimeout(() => { document.getElementById("hidden-btn").click(); }, 1000);
+                request.send(JSON.stringify(params));
+                var userid = 23; var username = "simon"; var orderjson = JSON.stringify(jsoncart);
+                var { data, error } = supabase
+                    .from('orders')
+                    .insert([
+                        { userid: userid, username: username, orderjson: orderjson, datetime: dateTime },
+                    ]).then(function (response) {
+                        console.log(response);
+                    }).catch(function (error) {
+                        console.error(error);
+                    });
+                setTimeout(() => { document.getElementById("hidden-btn").click(); }, 900);
             }
         }
 
