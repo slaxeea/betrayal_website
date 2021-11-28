@@ -20,6 +20,7 @@
     <meta name="author" content="Michele Biondi & Simon Kappeler" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="js/dropdown.js"></script>
+    <script src="js/auth.js"></script>
     <meta lang="en" />
 
 </head>
@@ -121,8 +122,7 @@
     <script src="./dist/cart/dist/cart-localstorage.min.js" defer></script>
     <script>
         $(document).ready(function () {
-            supabase = supabase.createClient('https://rzsrjvhfytcbeepyssgf.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzODAzMTM3MSwiZXhwIjoxOTUzNjA3MzcxfQ._lbG5Svb4bQbrsArAMRPq2mG3ERItCiiEZdaNsKFh8g');
-
+            supabase = init();
         });
 
         function sendMsg() {
@@ -194,7 +194,7 @@
                     }]
                 };
                 request.send(JSON.stringify(params));
-                var userid = 23; var username = "simon"; var orderjson = JSON.stringify(jsoncart);
+                var userid = getCurrentUser().id; var username = "simon"; var orderjson = JSON.stringify(jsoncart);
                 var { data, error } = supabase
                     .from('orders')
                     .insert([

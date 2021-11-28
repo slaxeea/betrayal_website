@@ -94,26 +94,6 @@
                 }
             }
         }
-
-        $(document).ready(function () {
-            var key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzODAzMTM3MSwiZXhwIjoxOTUzNjA3MzcxfQ._lbG5Svb4bQbrsArAMRPq2mG3ERItCiiEZdaNsKFh8g';
-            const { createClient } = supabase
-            //const _supabase = createClient('https://xyzcompany.supabase.co', key);
-
-            var a = $.ajax({
-                url: 'https://rzsrjvhfytcbeepyssgf.supabase.co/rest/v1/products',
-                type: 'GET',
-                headers: {
-                    apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzODAzMTM3MSwiZXhwIjoxOTUzNjA3MzcxfQ._lbG5Svb4bQbrsArAMRPq2mG3ERItCiiEZdaNsKFh8g',
-                }
-            })
-            a.then(function (res) {
-                res.forEach(element => {
-                    console.table(element.id,element.name, element.price);
-                });
-            })
-        });
-
     </script>
 
 </body>

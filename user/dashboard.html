@@ -6,6 +6,7 @@
     <title>btryl clothing</title>
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/navbtn.css" />
+    <link rel="stylesheet" href="../style/dashboard.css" />
     <link rel="stylesheet" href="../style/form.css" />
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.ico" />
     <script src="https://code.jquery.com/jquery-3.6.0.js"
@@ -43,67 +44,77 @@
         <img src="../imgs/BtrylMainLogo.png" class="mini-logo" alt="logo" onclick="dropdown()">
 
         <ul class="mobile-nav-bar" id="mobile-nav-bar">
-            <li><a href="index.html" class="nav-btn">home</a></li>
-            <li><a href="collection_2020.html" class="nav-btn">winter collection 2021</a></li>
-            <li><a href="collection_2021.html" class="nav-btn">summer start-up</a></li><br>
-            <li><a href="about.html" class="nav-btn" id="a">about</a></li><br>
+            <li><a href="../index.html" class="nav-btn">home</a></li>
+            <li><a href="../collection_2020.html" class="nav-btn">winter collection 2021</a></li>
+            <li><a href="../collection_2021.html" class="nav-btn">summer start-up</a></li><br>
+            <li><a href="../about.html" class="nav-btn" id="a">about</a></li><br>
 
-            <li><a href="tos.html" class="nav-btn less-padding " id="a">agb</a></li>
-            <li><a href="impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
+            <li><a href="../tos.html" class="nav-btn less-padding " id="a">agb</a></li>
+            <li><a href="../impressum.html" class="nav-btn less-padding" id="a">impressum</a></li><br>
         </ul>
     </div>
 
 
     <div class="main">
-        <form class="form" action="not_found.html">
-            <label for="vorname">Mail: </label><br>
-            <input type="email" id="mail" required> <br>
-
-            <label for="name">Passwort: </label><br>
-            <input type="password" id="password" required>
 
 
-            <label for="adresse">Name</label>
-            <input type="text" id="name" required> <br>
-
-            <br><br>
-
-        </form><br>
-        <br><br>
+        <div id="ankor">
+            <h2>Orders</h2>
+        </div>
 
 
     </div>
 
-    <br>
-    <p class="error" id="error">
-
-    </p>
-
-
-    <button class="submit-btn" onclick="login()">login</button><br> <br>
-
-
-    </div>
     <script>
         $(document).ready(function () {
             supabase = init();
+            if(getCurrentUser()){
+                getOrders();
+            } else{
+                $("#ankor").append("<h3>please login to see your dasboard</h3>");
+            }
         });
 
-        function login() {
-            var mail = document.getElementById("mail").value;
-            var password = document.getElementById("password").value;
-            var name = document.getElementById("name").value;
+        function getOrders() {
+            let { data: orders, error } = supabase
+                .from('orders')
+                .select('*')
+                .eq("userid", supabase.auth.currentUser.id)
+                .then(function (response) {
+                    Array.from(response.data).forEach(function (val, key) {
+                        let order = JSON.parse(val.orderjson);
+                        $("#ankor").append(`
+                            <div class="order">
+                                <h3>Order ${key+1}</h3>
+                                <p>${getOrderFromJson(order)}</p>
+                            </div>
+                        `);
+                    })
 
-            // Check if a field is empty
-            if (!mail || !password) {
-                document.getElementById('error').textContent = "Fülle bitte alles aus!";
-            }
-            if (true) {
-                loginWithEmailAndPassword(mail, password);
-            }
+                }).catch(function (error) {
+                    console.error(error);
+                });
         }
 
-        
+        function getOrderFromJson(order) {
+            let orderarray = new Map();
+            let orderstring = "";
+            for (let i = 0; order[i] != null; i++) {
+                orderarray.set(i, order[i]);
+            }
+
+            console.log(orderarray);
+
+            orderarray.forEach(function (val, key) {
+                orderstring+= `
+                    <div>
+                        <p>Name: ${order[0].name}, Grösse: ${order[0].size}, Menge: ${order[0].quantity}</p>
+                    </div>
+                `;
+            });
+            return orderstring;
+        }
+
 
         function toggle() {
             var rn = document.getElementById("hidden-text");
